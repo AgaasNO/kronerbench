@@ -1,0 +1,300 @@
+- id: no-formats-0001
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: kr 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Space groups thousands; comma separates cents.
+  origin: handwritten
+- id: no-formats-0002
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: 1.234,50 NOK'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Dots group thousands.
+  origin: handwritten
+- id: no-formats-0003
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: kr 100,-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Comma dash means zero cents.
+  origin: handwritten
+- id: no-formats-0004
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: 100,–'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: An en dash means zero cents.
+  origin: handwritten
+- id: no-formats-0005
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: kr 12 500,--'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1250000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Double dash means zero cents.
+  origin: handwritten
+- id: no-formats-0006
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: 0,01 NOK'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: The smallest positive amount is one øre.
+  origin: handwritten
+- id: no-formats-0007
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: NOK 0,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 0
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Zero is a value, not missing data.
+  origin: handwritten
+- id: no-formats-0008
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: NOK -0,01'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -1
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Negative one øre retains its sign.
+  origin: handwritten
+- id: no-formats-0009
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: 12 345 678,90'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1234567890
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: All groups contain three digits.
+  origin: handwritten
+- id: no-formats-0010
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: 001 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Leading zeros do not change the amount.
+  origin: handwritten
+- id: no-formats-0011
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: 1000,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Ungrouped integers are valid.
+  origin: handwritten
+- id: no-formats-0012
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: kr 1.000.000,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Two dot groups denote a million.
+  origin: handwritten
+- id: no-formats-0013
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: NOK 999,99'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 99999
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Cents are not rounded.
+  origin: handwritten
+- id: no-formats-0014
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: NOK 10 010,10'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1001010
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Internal zeros must be retained.
+  origin: handwritten
+- id: no-formats-0015
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: 1 001,00 kr.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100100
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: A trailing kr. is a currency token.
+  origin: handwritten
+- id: no-formats-0016
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: kr 500'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 50000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: A bare integer denotes whole kroner.
+  origin: handwritten
+- id: no-formats-0017
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: NOK 50,05'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 5005
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Leading zero in cents matters.
+  origin: handwritten
+- id: no-formats-0018
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: kr 1 000,-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Grouped whole-unit marker.
+  origin: handwritten
+- id: no-formats-0019
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: NOK 12,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1200
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: Two decimal zeros remain whole kroner.
+  origin: handwritten
+- id: no-formats-0020
+  suite: no-formats
+  lang: nb
+  source: 'Å betale: NOK 100 000,01'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000001
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - no-formats
+  rationale: One øre beyond a large integer.
+  origin: handwritten

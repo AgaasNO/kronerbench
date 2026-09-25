@@ -1,0 +1,450 @@
+- id: eu-formats-0001
+  suite: eu-formats
+  lang: de
+  source: 'Invoice total: CHF 1''234.50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: CHF
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Swiss apostrophe grouping and decimal dot.
+  origin: handwritten
+- id: eu-formats-0002
+  suite: eu-formats
+  lang: de
+  source: 'Invoice total: Fr. 12.–'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1200
+      currency: CHF
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Swiss whole-franc marker.
+  origin: handwritten
+- id: eu-formats-0003
+  suite: eu-formats
+  lang: nl
+  source: 'Invoice total: € 12,-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1200
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Dutch comma dash means zero cents.
+  origin: handwritten
+- id: eu-formats-0004
+  suite: eu-formats
+  lang: fr
+  source: 'Invoice total: 1 234,50 €'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: French narrow no-break space is grouping.
+  origin: handwritten
+- id: eu-formats-0005
+  suite: eu-formats
+  lang: sv
+  source: 'Invoice total: 49:- SEK'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 4900
+      currency: SEK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Swedish colon dash denotes whole kronor.
+  origin: handwritten
+- id: eu-formats-0006
+  suite: eu-formats
+  lang: sv
+  source: 'Invoice total: 12:50 SEK'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1250
+      currency: SEK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Swedish colon separates öre.
+  origin: handwritten
+- id: eu-formats-0007
+  suite: eu-formats
+  lang: en
+  source: 'Invoice total: €1,234.50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Currency does not determine decimal syntax.
+  origin: handwritten
+- id: eu-formats-0008
+  suite: eu-formats
+  lang: is
+  source: 'Invoice total: 1.234 kr.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123400
+      currency: ISK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Icelandic dot groups whole kronur.
+  origin: handwritten
+- id: eu-formats-0009
+  suite: eu-formats
+  lang: cs
+  source: 'Invoice total: 100,- Kč'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000
+      currency: CZK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Czech comma dash means whole crowns.
+  origin: handwritten
+- id: eu-formats-0010
+  suite: eu-formats
+  lang: hu
+  source: 'Invoice total: 12 500 Ft'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1250000
+      currency: HUF
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Hungarian grouped integer.
+  origin: handwritten
+- id: eu-formats-0011
+  suite: eu-formats
+  lang: pl
+  source: 'Invoice total: 1 234,50 zł'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: PLN
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Polish comma decimals.
+  origin: handwritten
+- id: eu-formats-0012
+  suite: eu-formats
+  lang: en
+  source: 'Invoice total: £1,234.50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: GBP
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Pounds use decimal dot here.
+  origin: handwritten
+- id: eu-formats-0013
+  suite: eu-formats
+  lang: da
+  source: 'Invoice total: DKK 1.234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: DKK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Danish dot grouping.
+  origin: handwritten
+- id: eu-formats-0014
+  suite: eu-formats
+  lang: de
+  source: 'Invoice total: EUR 1.234,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123400
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: German comma decimal.
+  origin: handwritten
+- id: eu-formats-0015
+  suite: eu-formats
+  lang: fr
+  source: 'Invoice total: CHF 1’234.50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: CHF
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Typographic apostrophe is normalized.
+  origin: handwritten
+- id: eu-formats-0016
+  suite: eu-formats
+  lang: en
+  source: 'Invoice total: NOK 1,234.50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: An English interface can show Norwegian currency.
+  origin: handwritten
+- id: eu-formats-0017
+  suite: eu-formats
+  lang: fi
+  source: 'Invoice total: € 1 000,01'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100001
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Finnish grouping with one cent.
+  origin: handwritten
+- id: eu-formats-0018
+  suite: eu-formats
+  lang: sv
+  source: 'Invoice total: SEK 100:00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000
+      currency: SEK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Colon is not a ratio in this price.
+  origin: handwritten
+- id: eu-formats-0019
+  suite: eu-formats
+  lang: de
+  source: 'Invoice total: CHF 100.-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000
+      currency: CHF
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Dot dash is a zero-cent marker.
+  origin: handwritten
+- id: eu-formats-0020
+  suite: eu-formats
+  lang: cs
+  source: 'Invoice total: 12 000 Kč'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1200000
+      currency: CZK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: A currency suffix follows the number.
+  origin: handwritten
+- id: eu-formats-0021
+  suite: eu-formats
+  lang: de
+  source: 'Invoice total: EUR 0,01'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: One euro cent.
+  origin: handwritten
+- id: eu-formats-0022
+  suite: eu-formats
+  lang: en
+  source: 'Invoice total: €0.01'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Irish one cent.
+  origin: handwritten
+- id: eu-formats-0023
+  suite: eu-formats
+  lang: da
+  source: 'Invoice total: DKK 49,95'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 4995
+      currency: DKK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Retail cents must not be rounded.
+  origin: handwritten
+- id: eu-formats-0024
+  suite: eu-formats
+  lang: fr
+  source: 'Invoice total: Fr. 1 200.00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 120000
+      currency: CHF
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Swiss space grouping with decimal dot.
+  origin: handwritten
+- id: eu-formats-0025
+  suite: eu-formats
+  lang: fr
+  source: 'Invoice total: 9 999,99 €'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 999999
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: No-break spaces separate groups.
+  origin: handwritten
+- id: eu-formats-0026
+  suite: eu-formats
+  lang: sv
+  source: 'Invoice total: SEK 1 234:50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: SEK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Grouped Swedish colon price.
+  origin: handwritten
+- id: eu-formats-0027
+  suite: eu-formats
+  lang: en
+  source: 'Invoice total: £12.05'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1205
+      currency: GBP
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: A zero in pence matters.
+  origin: handwritten
+- id: eu-formats-0028
+  suite: eu-formats
+  lang: de
+  source: 'Invoice total: CHF 0.05'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 5
+      currency: CHF
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Five rappen.
+  origin: handwritten
+- id: eu-formats-0029
+  suite: eu-formats
+  lang: de
+  source: 'Invoice total: 1.000.000,00 €'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000000
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Multiple groups are not decimal points.
+  origin: handwritten
+- id: eu-formats-0030
+  suite: eu-formats
+  lang: nl
+  source: 'Invoice total: 12 500,00 EUR'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1250000
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - eu-formats
+  rationale: Currency code suffix.
+  origin: handwritten

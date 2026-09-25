@@ -76,7 +76,7 @@ def readings(
 ) -> dict[Decimal, list[str]]:
     """Enumerate complete-string grammatical readings, preserving ties."""
     found: dict[Decimal, list[str]] = {}
-    specs = [("comma", ",", (" ", ".", "'"))]
+    specs: list[tuple[str, str, tuple[str, ...]]] = [("comma", ",", (" ", ".", "'"))]
     if not norway_only:
         specs += [("dot", ".", (",", " ", "'")), ("colon", ":", (" ", ".", ",", "'"))]
     places = "|".join(f"[0-9]{{{n}}}" for n in decimals)

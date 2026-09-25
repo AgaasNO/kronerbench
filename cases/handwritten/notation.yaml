@@ -1,0 +1,225 @@
+- id: notation-0001
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: (1 234,50)'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Parentheses denote a credit.
+  origin: handwritten
+- id: notation-0002
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: 1.234,50-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Trailing SAP minus.
+  origin: handwritten
+- id: notation-0003
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: −500'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -50000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Unicode minus.
+  origin: handwritten
+- id: notation-0004
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: kr -500,-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -50000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Leading minus is separate from zero-cent suffix.
+  origin: handwritten
+- id: notation-0005
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: 500 CR'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -50000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: CR explicitly denotes a credit.
+  origin: handwritten
+- id: notation-0006
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: 500 DR'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 50000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: DR explicitly denotes a debit.
+  origin: handwritten
+- id: notation-0007
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: –1 000,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Leading en dash is a minus.
+  origin: handwritten
+- id: notation-0008
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: 0,01-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -1
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: A negative one-øre adjustment.
+  origin: handwritten
+- id: notation-0009
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: (0,50)'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -50
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Parenthesized fraction.
+  origin: handwritten
+- id: notation-0010
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: 100,–'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Trailing en dash after comma is not negative.
+  origin: handwritten
+- id: notation-0011
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: 1 000,--'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Double dash marker is positive.
+  origin: handwritten
+- id: notation-0012
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: -1.000.000,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -100000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Negative million with groups.
+  origin: handwritten
+- id: notation-0013
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: 1 000,00-'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Trailing minus after space grouping.
+  origin: handwritten
+- id: notation-0014
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: (12 500,00)'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -1250000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: A large accounting credit.
+  origin: handwritten
+- id: notation-0015
+  suite: notation
+  lang: nb
+  source: 'Postering som skal bokføres: NOK -0,00'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 0
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - notation
+  rationale: Negative zero has zero value.
+  origin: handwritten

@@ -11,3 +11,8 @@
 - 2026-09-25: JSON monetary numbers with fractional minor units are loud rejections; no rounding policy is silently applied by the reference validator.
 - 2026-09-25: The 372 reference vectors use explicit hand-calculated base values plus value-preserving currency wrappers; Hypothesis supplies separate random round-trip coverage.
 - 2026-09-25: Exactly-two-decimal amount grammars cannot produce different accepted readings; assert this invariant rather than retain an unreachable ambiguity branch.
+- 2026-09-25: Ship 180 authored traps and 290 explicitly labeled generated cases, totaling exactly 470 across the requested suites.
+- 2026-09-25: Synthetic financial identifiers use all-zero fixtures and explicit test-document labels; do not claim that a realistic checksum proves an identifier belongs to nobody.
+- 2026-09-25: Case sampling is balanced round-robin across suites after seeded shuffling, and excludes derived by default.
+- 2026-09-25: Network failures with uncertain billing consume their conservative request ceiling in the cost guard instead of being counted as free.
+- 2026-09-25: Preserve sub-cent JSON values as Decimal but reject their commitment; offline float analysis uses `round(float(value) * 100)` as the common storage implementation.

@@ -1,0 +1,150 @@
+- id: unicode-0001
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1 234,50
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: No-break space.
+  origin: handwritten
+- id: unicode-0002
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1 234,50
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Narrow no-break space.
+  origin: handwritten
+- id: unicode-0003
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1 234,50
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Thin space.
+  origin: handwritten
+- id: unicode-0004
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1 234,50
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Figure space.
+  origin: handwritten
+- id: unicode-0005
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1 000​,00
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Zero-width space is removed.
+  origin: handwritten
+- id: unicode-0006
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1‌000,00
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Zero-width nonjoiner is removed.
+  origin: handwritten
+- id: unicode-0007
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1‍000,00
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Zero-width joiner is removed.
+  origin: handwritten
+- id: unicode-0008
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1⁠000,00
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Word joiner is removed.
+  origin: handwritten
+- id: unicode-0009
+  suite: unicode
+  lang: nb
+  source: "Å betale NOK \uFEFF1 000,00"
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Byte-order mark is removed.
+  origin: handwritten
+- id: unicode-0010
+  suite: unicode
+  lang: nb
+  source: Å betale NOK 1’234.50
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - unicode
+  rationale: Curly apostrophe.
+  origin: handwritten

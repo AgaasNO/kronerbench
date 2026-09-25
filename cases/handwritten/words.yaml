@@ -1,0 +1,225 @@
+- id: words-0001
+  suite: words
+  lang: nb
+  source: 'Amount due: ett tusen fem hundre kroner'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 150000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Norwegian number words.
+  origin: handwritten
+- id: words-0002
+  suite: words
+  lang: da
+  source: 'Amount due: halvfems kroner'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 9000
+      currency: DKK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Danish halvfems means ninety.
+  origin: handwritten
+- id: words-0003
+  suite: words
+  lang: fr
+  source: 'Amount due: quatre-vingt-dix-neuf euros'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 9900
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: French base-twenty form is ninety-nine.
+  origin: handwritten
+- id: words-0004
+  suite: words
+  lang: fr
+  source: 'Amount due: nonante-neuf euros'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 9900
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Belgian ninety-nine.
+  origin: handwritten
+- id: words-0005
+  suite: words
+  lang: nb
+  source: 'Amount due: 1 billion kroner. Norsk lang skala.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000000000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Norwegian billion is ten to the twelfth.
+  origin: handwritten
+- id: words-0006
+  suite: words
+  lang: nb
+  source: 'Amount due: to hundre og femti kroner'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 25000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Conjunction does not alter the number.
+  origin: handwritten
+- id: words-0007
+  suite: words
+  lang: nb
+  source: 'Amount due: null kroner'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 0
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Explicit zero.
+  origin: handwritten
+- id: words-0008
+  suite: words
+  lang: nb
+  source: 'Amount due: minus femti kroner'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -5000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Written negative sign.
+  origin: handwritten
+- id: words-0009
+  suite: words
+  lang: nb
+  source: 'Amount due: en million kroner'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Million is ten to the sixth.
+  origin: handwritten
+- id: words-0010
+  suite: words
+  lang: nb
+  source: 'Amount due: fem kroner og femti øre'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 550
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Both major and minor units.
+  origin: handwritten
+- id: words-0011
+  suite: words
+  lang: en
+  source: 'Amount due: twelve euros and fifty cents'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1250
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: English mixed-unit words.
+  origin: handwritten
+- id: words-0012
+  suite: words
+  lang: de
+  source: 'Amount due: fünfundzwanzig Euro'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 2500
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: German twenty-five.
+  origin: handwritten
+- id: words-0013
+  suite: words
+  lang: da
+  source: 'Amount due: halvfjerds kroner'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 7000
+      currency: DKK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: Danish seventy.
+  origin: handwritten
+- id: words-0014
+  suite: words
+  lang: fr
+  source: 'Amount due: soixante-dix euros'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 7000
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: French seventy.
+  origin: handwritten
+- id: words-0015
+  suite: words
+  lang: nb
+  source: 'Amount due: ett tusen og én krone'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100100
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - words
+  rationale: The final unit is not a hundred.
+  origin: handwritten
