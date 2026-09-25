@@ -1,0 +1,314 @@
+{
+  "passed": true,
+  "report": "reports/latest/index.html",
+  "checks": [
+    {
+      "page": "verdict",
+      "width": 1440,
+      "theme": "light",
+      "file": "verdict-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "leaderboard",
+      "width": 1440,
+      "theme": "light",
+      "file": "leaderboard-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "strict-vs-lenient",
+      "width": 1440,
+      "theme": "light",
+      "file": "strict-vs-lenient-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "where-it-breaks",
+      "width": 1440,
+      "theme": "light",
+      "file": "where-it-breaks-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "error-anatomy",
+      "width": 1440,
+      "theme": "light",
+      "file": "error-anatomy-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "retry-lab",
+      "width": 1440,
+      "theme": "light",
+      "file": "retry-lab-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "parser-lab",
+      "width": 1440,
+      "theme": "light",
+      "file": "parser-lab-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "cost-vs-reliability",
+      "width": 1440,
+      "theme": "light",
+      "file": "cost-vs-reliability-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "jev-and-confidence",
+      "width": 1440,
+      "theme": "light",
+      "file": "jev-and-confidence-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "case-explorer",
+      "width": 1440,
+      "theme": "light",
+      "file": "case-explorer-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "methods",
+      "width": 1440,
+      "theme": "light",
+      "file": "methods-light-1440.png",
+      "passed": true
+    },
+    {
+      "page": "verdict",
+      "width": 1440,
+      "theme": "dark",
+      "file": "verdict-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "leaderboard",
+      "width": 1440,
+      "theme": "dark",
+      "file": "leaderboard-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "strict-vs-lenient",
+      "width": 1440,
+      "theme": "dark",
+      "file": "strict-vs-lenient-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "where-it-breaks",
+      "width": 1440,
+      "theme": "dark",
+      "file": "where-it-breaks-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "error-anatomy",
+      "width": 1440,
+      "theme": "dark",
+      "file": "error-anatomy-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "retry-lab",
+      "width": 1440,
+      "theme": "dark",
+      "file": "retry-lab-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "parser-lab",
+      "width": 1440,
+      "theme": "dark",
+      "file": "parser-lab-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "cost-vs-reliability",
+      "width": 1440,
+      "theme": "dark",
+      "file": "cost-vs-reliability-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "jev-and-confidence",
+      "width": 1440,
+      "theme": "dark",
+      "file": "jev-and-confidence-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "case-explorer",
+      "width": 1440,
+      "theme": "dark",
+      "file": "case-explorer-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "methods",
+      "width": 1440,
+      "theme": "dark",
+      "file": "methods-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "verdict",
+      "width": 390,
+      "theme": "light",
+      "file": "verdict-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "leaderboard",
+      "width": 390,
+      "theme": "light",
+      "file": "leaderboard-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "strict-vs-lenient",
+      "width": 390,
+      "theme": "light",
+      "file": "strict-vs-lenient-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "where-it-breaks",
+      "width": 390,
+      "theme": "light",
+      "file": "where-it-breaks-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "error-anatomy",
+      "width": 390,
+      "theme": "light",
+      "file": "error-anatomy-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "retry-lab",
+      "width": 390,
+      "theme": "light",
+      "file": "retry-lab-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "parser-lab",
+      "width": 390,
+      "theme": "light",
+      "file": "parser-lab-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "cost-vs-reliability",
+      "width": 390,
+      "theme": "light",
+      "file": "cost-vs-reliability-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "jev-and-confidence",
+      "width": 390,
+      "theme": "light",
+      "file": "jev-and-confidence-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "case-explorer",
+      "width": 390,
+      "theme": "light",
+      "file": "case-explorer-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "methods",
+      "width": 390,
+      "theme": "light",
+      "file": "methods-light-390.png",
+      "passed": true
+    },
+    {
+      "page": "verdict",
+      "width": 390,
+      "theme": "dark",
+      "file": "verdict-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "leaderboard",
+      "width": 390,
+      "theme": "dark",
+      "file": "leaderboard-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "strict-vs-lenient",
+      "width": 390,
+      "theme": "dark",
+      "file": "strict-vs-lenient-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "where-it-breaks",
+      "width": 390,
+      "theme": "dark",
+      "file": "where-it-breaks-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "error-anatomy",
+      "width": 390,
+      "theme": "dark",
+      "file": "error-anatomy-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "retry-lab",
+      "width": 390,
+      "theme": "dark",
+      "file": "retry-lab-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "parser-lab",
+      "width": 390,
+      "theme": "dark",
+      "file": "parser-lab-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "cost-vs-reliability",
+      "width": 390,
+      "theme": "dark",
+      "file": "cost-vs-reliability-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "jev-and-confidence",
+      "width": 390,
+      "theme": "dark",
+      "file": "jev-and-confidence-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "case-explorer",
+      "width": 390,
+      "theme": "dark",
+      "file": "case-explorer-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "methods",
+      "width": 390,
+      "theme": "dark",
+      "file": "methods-dark-390.png",
+      "passed": true
+    }
+  ]
+}

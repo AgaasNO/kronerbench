@@ -22,3 +22,6 @@
 - 2026-09-25: Bundle the report as an IIFE and load embedded data through a classic script so it works under file:// without fetch, a server or external fonts.
 - 2026-09-25: Permit the esbuild install script explicitly in pnpm workspace configuration; Playwright uses its bundled Chromium.
 - 2026-09-25: Use transition bars for the first Retry lab implementation; the requested alluvial, Pareto frontier, verifier curves and full hypothesis decision rules remain tracked work.
+- 2026-09-25: CI uses Node 22 for the current Vite/pnpm toolchain; Python remains 3.12-compatible.
+- 2026-09-25: Pages and release workflows require a published-run record and are not invoked for this fixture-only checkpoint.
+- 2026-09-25: A tool-managed local checkpoint ref contains the original `.env`; it is outside both publishing branches. Scan the complete histories of `main` and `feat/kronerbench` and push those refs explicitly without exporting local checkpoint refs.

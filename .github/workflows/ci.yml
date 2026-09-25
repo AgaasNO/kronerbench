@@ -1,5 +1,7 @@
 name: CI
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -8,7 +10,43 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '11.3.0'
       - run: uv sync --dev --locked
       - run: uv run ruff check .
       - run: uv run mypy
-      - run: uv run pytest
+      - run: uv run pytest --cov=kronerbench.parsers --cov-branch --cov-report=json:coverage.json --cov-fail-under=100
+      - run: pnpm --dir ui install --frozen-lockfile
+      - run: pnpm --dir ui check
+      - run: pnpm --dir ui build
+      - run: pnpm --dir ui exec playwright install --with-deps chromium
+      - run: uv run kronerbench run --profile quick --dry-run --run-id ci-fixture
+      - run: uv run kronerbench report ci-fixture
+      - run: pnpm --dir ui qa
+      - run: uv run kronerbench selfcheck --skip-live
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fixture-report
+          path: |
+            reports/latest/
+            docs/img/
+  live-contract:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+      - if: env.OPENROUTER_API_KEY != ''
+        run: uv sync --dev --locked
+      - if: env.OPENROUTER_API_KEY != ''
+        run: uv run pytest tests/contract -m live
+        env:
+          KRONERBENCH_LIVE: '1'
