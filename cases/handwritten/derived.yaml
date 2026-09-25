@@ -1,0 +1,75 @@
+- id: derived-0001
+  suite: derived
+  lang: nb
+  source: Netto 1 000,00, mva 25 %. Book gross.
+  instruction: Calculate and record the requested amount.
+  fields:
+    total:
+      expected_minor: 125000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - derived
+  rationale: 1000 times 1.25 is 1250.
+  origin: handwritten
+- id: derived-0002
+  suite: derived
+  lang: nb
+  source: Net EUR 100,00, VAT 19 %. Book gross.
+  instruction: Calculate and record the requested amount.
+  fields:
+    total:
+      expected_minor: 11900
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - derived
+  rationale: 100 plus 19 is 119.
+  origin: handwritten
+- id: derived-0003
+  suite: derived
+  lang: nb
+  source: Price 100,00, discount 15 %. Book discounted total.
+  instruction: Calculate and record the requested amount.
+  fields:
+    total:
+      expected_minor: 8500
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - derived
+  rationale: 100 less 15 is 85.
+  origin: handwritten
+- id: derived-0004
+  suite: derived
+  lang: nb
+  source: Two units at NOK 49,50 each. Book total.
+  instruction: Calculate and record the requested amount.
+  fields:
+    total:
+      expected_minor: 9900
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - derived
+  rationale: Two times 49.50 is 99.
+  origin: handwritten
+- id: derived-0005
+  suite: derived
+  lang: nb
+  source: Gross 125,00 including 25 % VAT. Book net.
+  instruction: Calculate and record the requested amount.
+  fields:
+    total:
+      expected_minor: 10000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - derived
+  rationale: 125 divided by 1.25 is 100.
+  origin: handwritten

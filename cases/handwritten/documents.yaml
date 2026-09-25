@@ -1,0 +1,208 @@
+- id: documents-0001
+  suite: documents
+  lang: nb
+  source: 'Netto 1 000,00
+
+    Mva 25 % 250,00
+
+    Øreavrunding -0,40
+
+    Å betale 1 249,60'
+  instruction: Record each named field from the document.
+  fields:
+    net:
+      expected_minor: 100000
+    vat:
+      expected_minor: 25000
+    total:
+      expected_minor: 124960
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: Rounding is already included in the stated total.
+  origin: handwritten
+- id: documents-0002
+  suite: documents
+  lang: nb
+  source: 'Rechnung: Netto EUR 100,00; zzgl. 19 % MwSt. EUR 19,00; Gesamt EUR 119,00'
+  instruction: Record each named field from the document.
+  fields:
+    net:
+      expected_minor: 10000
+      currency: EUR
+    vat:
+      expected_minor: 1900
+      currency: EUR
+    total:
+      expected_minor: 11900
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: The rate is not the VAT amount.
+  origin: handwritten
+- id: documents-0003
+  suite: documents
+  lang: nb
+  source: 'Facture: HT 100,00 EUR; TVA 20,00 EUR; TTC 120,00 EUR'
+  instruction: Record each named field from the document.
+  fields:
+    net:
+      expected_minor: 10000
+      currency: EUR
+    vat:
+      expected_minor: 2000
+      currency: EUR
+    total:
+      expected_minor: 12000
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: HT is net and TTC is gross.
+  origin: handwritten
+- id: documents-0004
+  suite: documents
+  lang: nb
+  source: 'Hotel folio
+
+    | qty | room | debit | credit |
+
+    | 2|0344| 5.312,70 | 6.042,42-|'
+  instruction: Record each named field from the document.
+  fields:
+    debit:
+      expected_minor: 531270
+    credit:
+      expected_minor: -604242
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: Room and quantity are distractors; credit has trailing minus.
+  origin: handwritten
+- id: documents-0005
+  suite: documents
+  lang: nb
+  source: 'OTA payout
+
+    Gross NOK 1,234.50
+
+    Fees NOK 234.50
+
+    Net payout NOK 1,000.00'
+  instruction: Record each named field from the document.
+  fields:
+    gross:
+      expected_minor: 123450
+    fees:
+      expected_minor: 23450
+    total:
+      expected_minor: 100000
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: English syntax is independent of NOK currency.
+  origin: handwritten
+- id: documents-0006
+  suite: documents
+  lang: nb
+  source: 'Credit note
+
+    Net (100,00)
+
+    VAT (25,00)
+
+    Total (125,00)'
+  instruction: Record each named field from the document.
+  fields:
+    net:
+      expected_minor: -10000
+    vat:
+      expected_minor: -2500
+    total:
+      expected_minor: -12500
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: All three amounts are credits.
+  origin: handwritten
+- id: documents-0007
+  suite: documents
+  lang: nb
+  source: 'Bank CSV
+
+    booking;amount;balance
+
+    03.04.2026;-500,00;12 500,00'
+  instruction: Record each named field from the document.
+  fields:
+    amount:
+      expected_minor: -50000
+    balance:
+      expected_minor: 1250000
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: Balance is not the transaction.
+  origin: handwritten
+- id: documents-0008
+  suite: documents
+  lang: nb
+  source: 'Invoice: net 99,99; VAT 25,00; total 124,99'
+  instruction: Record each named field from the document.
+  fields:
+    net:
+      expected_minor: 9999
+    vat:
+      expected_minor: 2500
+    total:
+      expected_minor: 12499
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: Copy the stated rounded VAT.
+  origin: handwritten
+- id: documents-0009
+  suite: documents
+  lang: nb
+  source: 'Receipt: goods 100,00; paid cash 200,00; change 100,00'
+  instruction: Record each named field from the document.
+  fields:
+    total:
+      expected_minor: 10000
+    cash:
+      expected_minor: 20000
+    change:
+      expected_minor: 10000
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: Cash tendered differs from the amount owed.
+  origin: handwritten
+- id: documents-0010
+  suite: documents
+  lang: nb
+  source: 'Statement: opening 1 000,00; movement -50,00; closing 950,00'
+  instruction: Record each named field from the document.
+  fields:
+    opening:
+      expected_minor: 100000
+    movement:
+      expected_minor: -5000
+    closing:
+      expected_minor: 95000
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - documents
+  rationale: Each field has its own label.
+  origin: handwritten

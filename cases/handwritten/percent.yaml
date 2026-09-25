@@ -1,0 +1,225 @@
+- id: percent-0001
+  suite: percent
+  lang: nb
+  source: ALV 25,5 %
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '25.5'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Finnish VAT has a fractional percentage.
+  origin: handwritten
+- id: percent-0002
+  suite: percent
+  lang: nb
+  source: Dokumentavgift 2,5 ‰
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '0.25'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Per mille is one tenth of a percentage point.
+  origin: handwritten
+- id: percent-0003
+  suite: percent
+  lang: nb
+  source: Endring +25 bp
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '0.25'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: One basis point is 0.01 percentage points.
+  origin: handwritten
+- id: percent-0004
+  suite: percent
+  lang: nb
+  source: Rabatt 15 %, rabattbeløp 150 kr
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '15'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Requested rate is not the cash discount.
+  origin: handwritten
+- id: percent-0005
+  suite: percent
+  lang: nb
+  source: Nominell rente 5 %, effektiv rente 5,3 %. Registrer effektiv rente.
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '5.3'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Choose effective interest.
+  origin: handwritten
+- id: percent-0006
+  suite: percent
+  lang: nb
+  source: Tax fraction 0.25, explicitly a fraction of one.
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '25'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: The document identifies a fraction, so multiply by 100.
+  origin: handwritten
+- id: percent-0007
+  suite: percent
+  lang: nb
+  source: Rate 0,25, unit not specified.
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      flag: true
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: A bare fraction is not an established percentage.
+  origin: handwritten
+- id: percent-0008
+  suite: percent
+  lang: nb
+  source: Andel 1/4 av totalen.
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '25'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: One quarter is 25 percent.
+  origin: handwritten
+- id: percent-0009
+  suite: percent
+  lang: nb
+  source: Margin 0,5 %
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '0.5'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Half percent is not fifty percent.
+  origin: handwritten
+- id: percent-0010
+  suite: percent
+  lang: nb
+  source: Økning 2 prosentpoeng
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '2'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Percentage points are an absolute difference.
+  origin: handwritten
+- id: percent-0011
+  suite: percent
+  lang: nb
+  source: VAT 0 %
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '0'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Zero rate is stated.
+  origin: handwritten
+- id: percent-0012
+  suite: percent
+  lang: nb
+  source: Penalty 12,125 %
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '12.125'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Three decimal percentage places are meaningful.
+  origin: handwritten
+- id: percent-0013
+  suite: percent
+  lang: nb
+  source: Loss rate −2,5 %
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '-2.5'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Signed rate.
+  origin: handwritten
+- id: percent-0014
+  suite: percent
+  lang: nb
+  source: Commission 100 %
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      expected_rate: '100'
+      currency: PERCENT
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Full share is one hundred percent.
+  origin: handwritten
+- id: percent-0015
+  suite: percent
+  lang: nb
+  source: Rate 1,250 %, no locale given.
+  instruction: Record the rate as percentage points.
+  fields:
+    rate:
+      flag: true
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - percent
+  rationale: Grouping and decimal readings differ.
+  origin: handwritten

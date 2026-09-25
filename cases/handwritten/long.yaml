@@ -1,0 +1,150 @@
+- id: long-0001
+  suite: long
+  lang: nb
+  source: Å betale NOK 10 000 000,00
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1000000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0002
+  suite: long
+  lang: nb
+  source: Å betale NOK 1 000 001,01
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000101
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0003
+  suite: long
+  lang: nb
+  source: Å betale NOK 7 777 777,77
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 777777777
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0004
+  suite: long
+  lang: nb
+  source: Å betale NOK 100 010 001,00
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10001000100
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0005
+  suite: long
+  lang: nb
+  source: Å betale NOK 999 999 999,99
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 99999999999
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0006
+  suite: long
+  lang: nb
+  source: Å betale NOK 123 456 789 012,34
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 12345678901234
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0007
+  suite: long
+  lang: nb
+  source: Å betale NOK 111 111 111,11
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 11111111111
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0008
+  suite: long
+  lang: nb
+  source: Å betale NOK 1 000,01
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100001
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0009
+  suite: long
+  lang: nb
+  source: Å betale NOK 10 101 010,10
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1010101010
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten
+- id: long-0010
+  suite: long
+  lang: nb
+  source: Å betale NOK 100 000 000 001,00
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 10000000000100
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - long
+  rationale: Every repeated digit and internal zero is significant.
+  origin: handwritten

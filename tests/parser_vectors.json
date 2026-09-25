@@ -1,0 +1,2234 @@
+[
+  {
+    "parser": "safe-eu",
+    "raw": "0,01",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 0,01",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "0,01 NOK",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 0,01",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "0,01 kr.",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 0,01",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "0,01 CHF",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 0,01",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "0,01 Kč",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "0,01 Ft",
+    "accepted": true,
+    "value": 1
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,00",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1,00",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,00 NOK",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1,00",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,00 kr.",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1,00",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,00 CHF",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1,00",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,00 Kč",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,00 Ft",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 12,50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,50 NOK",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 12,50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,50 kr.",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 12,50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,50 CHF",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 12,50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,50 Kč",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,50 Ft",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49,00",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 49,00",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49,00 NOK",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 49,00",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49,00 kr.",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 49,00",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49,00 CHF",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 49,00",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49,00 Kč",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49,00 Ft",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,00",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 100,00",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,00 NOK",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 100,00",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,00 kr.",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 100,00",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,00 CHF",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 100,00",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,00 Kč",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,00 Ft",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,00",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 12 500,00",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,00 NOK",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 12 500,00",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,00 kr.",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 12 500,00",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,00 CHF",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 12 500,00",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,00 Kč",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,00 Ft",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1.234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234,50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1.234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234,50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1.234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234,50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1.234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234,50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234,50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1,234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,234.50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1,234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,234.50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1,234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,234.50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1,234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,234.50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,234.50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1'234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1'234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1'234.50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1'234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1'234.50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1'234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1'234.50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1'234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1'234.50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1'234.50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49:-",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 49:-",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49:- NOK",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 49:-",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49:- kr.",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 49:-",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49:- CHF",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 49:-",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49:- Kč",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49:- Ft",
+    "accepted": true,
+    "value": 4900
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,-",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 100,-",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,- NOK",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 100,-",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,- kr.",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 100,-",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,- CHF",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 100,-",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,- Kč",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,- Ft",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,--",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 12 500,--",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,-- NOK",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 12 500,--",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,-- kr.",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 12 500,--",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,-- CHF",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 12 500,--",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,-- Kč",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12 500,-- Ft",
+    "accepted": true,
+    "value": 1250000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,–",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 100,–",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,– NOK",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 100,–",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,– kr.",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 100,–",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,– CHF",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 100,–",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,– Kč",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100,– Ft",
+    "accepted": true,
+    "value": 10000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.–",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 12.–",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.– NOK",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 12.–",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.– kr.",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 12.–",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.– CHF",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 12.–",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.– Kč",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.– Ft",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.-",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 12.-",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.- NOK",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 12.-",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.- kr.",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 12.-",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.- CHF",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 12.-",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.- Kč",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12.- Ft",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12:50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 12:50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12:50 NOK",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 12:50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12:50 kr.",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 12:50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12:50 CHF",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 12:50",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12:50 Kč",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12:50 Ft",
+    "accepted": true,
+    "value": 1250
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1 234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234,50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000​,00",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1 000​,00",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000​,00 NOK",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1 000​,00",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000​,00 kr.",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1 000​,00",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000​,00 CHF",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1 000​,00",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000​,00 Kč",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000​,00 Ft",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1’234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1’234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1’234.50 NOK",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1’234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1’234.50 kr.",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1’234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1’234.50 CHF",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1’234.50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1’234.50 Kč",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1’234.50 Ft",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100000000,00",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 100000000,00",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100000000,00 NOK",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 100000000,00",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100000000,00 kr.",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 100000000,00",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100000000,00 CHF",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 100000000,00",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100000000,00 Kč",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100000000,00 Ft",
+    "accepted": true,
+    "value": 10000000000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "7 777 777,77",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 7 777 777,77",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "7 777 777,77 NOK",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 7 777 777,77",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "7 777 777,77 kr.",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 7 777 777,77",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "7 777 777,77 CHF",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 7 777 777,77",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "7 777 777,77 Kč",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "7 777 777,77 Ft",
+    "accepted": true,
+    "value": 777777777
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000 001,01",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1 000 001,01",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000 001,01 NOK",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1 000 001,01",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000 001,01 kr.",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1 000 001,01",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000 001,01 CHF",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1 000 001,01",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000 001,01 Kč",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 000 001,01 Ft",
+    "accepted": true,
+    "value": 100000101
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100 010 001,00",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 100 010 001,00",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100 010 001,00 NOK",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 100 010 001,00",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100 010 001,00 kr.",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 100 010 001,00",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100 010 001,00 CHF",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 100 010 001,00",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100 010 001,00 Kč",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100 010 001,00 Ft",
+    "accepted": true,
+    "value": 10001000100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1.500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.500 NOK",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1.500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.500 kr.",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1.500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.500 CHF",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1.500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.500 Kč",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.500 Ft",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1,500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,500 NOK",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1,500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,500 kr.",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1,500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,500 CHF",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1,500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,500 Kč",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,500 Ft",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 1500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1500 NOK",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr 1500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1500 kr.",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "€ 1500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1500 CHF",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "SEK 1500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1500 Kč",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1500 Ft",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "−500",
+    "accepted": true,
+    "value": -50000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "–500",
+    "accepted": true,
+    "value": -50000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "kr -500,-",
+    "accepted": true,
+    "value": -50000
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "(1 234,50)",
+    "accepted": true,
+    "value": -123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234,50-",
+    "accepted": true,
+    "value": -123450
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "0",
+    "accepted": true,
+    "value": 0
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "-0,00",
+    "accepted": true,
+    "value": 0
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.00",
+    "accepted": true,
+    "value": 100
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "49:50",
+    "accepted": true,
+    "value": 4950
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "abc",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1.234.56",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 23,00",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 234.567,89",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,3",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "12,3456",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1 2З4,50",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "500 CR",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1,5 mrd. kr",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NOK 100 EUR",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "NaN",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "Infinity",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "--1",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "(-1,00)",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "+1",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "100.0000",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-eu",
+    "raw": "1\n234,50",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-no",
+    "raw": "1.234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "safe-no",
+    "raw": "1.500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-no",
+    "raw": "1 500",
+    "accepted": true,
+    "value": 150000
+  },
+  {
+    "parser": "safe-no",
+    "raw": "12,00",
+    "accepted": true,
+    "value": 1200
+  },
+  {
+    "parser": "safe-no",
+    "raw": "1,234.50",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-no",
+    "raw": "1.50",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "safe-no",
+    "raw": "12:50",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "naive",
+    "raw": "1.234,50",
+    "accepted": true,
+    "value": 123450
+  },
+  {
+    "parser": "naive",
+    "raw": "1,234.50",
+    "accepted": true,
+    "value": 123
+  },
+  {
+    "parser": "naive",
+    "raw": "12.50",
+    "accepted": true,
+    "value": 125000
+  },
+  {
+    "parser": "naive",
+    "raw": "1 000",
+    "accepted": true,
+    "value": 100000
+  },
+  {
+    "parser": "naive",
+    "raw": "-500",
+    "accepted": true,
+    "value": -50000
+  },
+  {
+    "parser": "naive",
+    "raw": "NaN",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "naive",
+    "raw": "Inf",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "naive",
+    "raw": "kr 10",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "naive",
+    "raw": "abc",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "percent",
+    "raw": "25,5 %",
+    "accepted": true,
+    "value": "25.5"
+  },
+  {
+    "parser": "percent",
+    "raw": "25%",
+    "accepted": true,
+    "value": "25"
+  },
+  {
+    "parser": "percent",
+    "raw": "2,5 ‰",
+    "accepted": true,
+    "value": "0.25"
+  },
+  {
+    "parser": "percent",
+    "raw": "25 bp",
+    "accepted": true,
+    "value": "0.25"
+  },
+  {
+    "parser": "percent",
+    "raw": "0.25 pp",
+    "accepted": true,
+    "value": "0.25"
+  },
+  {
+    "parser": "percent",
+    "raw": "0,25 %",
+    "accepted": true,
+    "value": "0.25"
+  },
+  {
+    "parser": "percent",
+    "raw": "1 250 %",
+    "accepted": true,
+    "value": "1250"
+  },
+  {
+    "parser": "percent",
+    "raw": "-10 %",
+    "accepted": true,
+    "value": "-10"
+  },
+  {
+    "parser": "percent",
+    "raw": "0%",
+    "accepted": true,
+    "value": "0"
+  },
+  {
+    "parser": "percent",
+    "raw": "25",
+    "accepted": true,
+    "value": "25"
+  },
+  {
+    "parser": "percent",
+    "raw": "0,25",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "percent",
+    "raw": "1,250 %",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "percent",
+    "raw": "1.250 %",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "percent",
+    "raw": "foo",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "percent",
+    "raw": "12,34567%",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "percent",
+    "raw": "EUR 10 %",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "date",
+    "raw": "03.04.2026",
+    "accepted": true,
+    "value": "2026-04-03"
+  },
+  {
+    "parser": "date",
+    "raw": "3/4-26",
+    "accepted": true,
+    "value": "2026-04-03"
+  },
+  {
+    "parser": "date",
+    "raw": "3. april 2026",
+    "accepted": true,
+    "value": "2026-04-03"
+  },
+  {
+    "parser": "date",
+    "raw": "2026-04-03",
+    "accepted": true,
+    "value": "2026-04-03"
+  },
+  {
+    "parser": "date",
+    "raw": "13/04/2026",
+    "accepted": true,
+    "value": "2026-04-13"
+  },
+  {
+    "parser": "date",
+    "raw": "29.02.2024",
+    "accepted": true,
+    "value": "2024-02-29"
+  },
+  {
+    "parser": "date",
+    "raw": "04/03/2026",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "date",
+    "raw": "29.02.2026",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "date",
+    "raw": "32.01.2026",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "date",
+    "raw": "1. foo 2026",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "date",
+    "raw": "2026/04/03",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "date",
+    "raw": "",
+    "accepted": false,
+    "value": null
+  },
+  {
+    "parser": "date",
+    "raw": "13/14/2026",
+    "accepted": false,
+    "value": null
+  }
+]

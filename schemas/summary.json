@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AgaasNO/kronerbench/schemas/summary.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "fixture": {
+      "type": "boolean"
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "model",
+          "condition",
+          "suite",
+          "n",
+          "ser",
+          "ser_ci"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ser": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "ser_ci": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      }
+    },
+    "conditions": {
+      "type": "array"
+    },
+    "comparisons": {
+      "type": "array"
+    },
+    "pooled": {
+      "type": "object"
+    },
+    "hypotheses": {
+      "type": "array"
+    },
+    "findings": {
+      "type": "array"
+    },
+    "offline_parsers": {
+      "type": "array"
+    },
+    "total_cost_usd": {
+      "type": "number"
+    },
+    "trial_count": {
+      "type": "integer"
+    },
+    "scored_trial_fraction": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "fixture",
+    "cells",
+    "conditions",
+    "comparisons",
+    "pooled",
+    "hypotheses",
+    "findings",
+    "offline_parsers",
+    "total_cost_usd",
+    "trial_count",
+    "scored_trial_fraction"
+  ]
+}

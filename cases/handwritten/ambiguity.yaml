@@ -1,0 +1,225 @@
+- id: ambiguity-0001
+  suite: ambiguity
+  lang: nb
+  source: 'Totalt 1.500. Andre linjer: 250,00 og 1 250,00.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 150000
+      currency: NOK
+  ambiguity: context
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Comma-decimal lines resolve dot grouping.
+  origin: handwritten
+- id: ambiguity-0002
+  suite: ambiguity
+  lang: nb
+  source: ca. 1,500. Mixed-language chat. Currency and precision unknown.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      flag: true
+      currency: NOK
+  ambiguity: 'true'
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Three digits can mean thousand grouping or extra precision.
+  origin: handwritten
+- id: ambiguity-0003
+  suite: ambiguity
+  lang: nb
+  source: Total 1.500, currency NOK, amounts use exactly two decimals.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 150000
+      currency: NOK
+  ambiguity: context
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Two-decimal currency convention resolves grouping.
+  origin: handwritten
+- id: ambiguity-0004
+  suite: ambiguity
+  lang: nb
+  source: Transfer 1,250. No currency or locale was specified.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      flag: true
+      currency: NOK
+  ambiguity: 'true'
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Three-place decimals and grouped integers are both plausible.
+  origin: handwritten
+- id: ambiguity-0005
+  suite: ambiguity
+  lang: nb
+  source: Å betale 1.000. Alle beløp er i hele kroner.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: context
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Whole-kroner label resolves grouping.
+  origin: handwritten
+- id: ambiguity-0006
+  suite: ambiguity
+  lang: nb
+  source: 'Quantity: 1.500. Book its price, which is not shown.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      flag: true
+      currency: NOK
+  ambiguity: 'true'
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Quantity is not a stated money amount.
+  origin: handwritten
+- id: ambiguity-0007
+  suite: ambiguity
+  lang: nb
+  source: 'Total: ?. Net 100,00. Tax rate missing.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      flag: true
+      currency: NOK
+  ambiguity: 'true'
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Missing tax prevents determining gross.
+  origin: handwritten
+- id: ambiguity-0008
+  suite: ambiguity
+  lang: nb
+  source: Draft total 100,00. Revised total not provided.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      flag: true
+      currency: NOK
+  ambiguity: 'true'
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: A draft cannot establish the final amount.
+  origin: handwritten
+- id: ambiguity-0009
+  suite: ambiguity
+  lang: nb
+  source: 'OCR total: 1 2З4,50 NOK'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: context
+  flag_ok: true
+  tags:
+  - ambiguity
+  rationale: Cyrillic letter resembles a digit; review is acceptable.
+  origin: handwritten
+- id: ambiguity-0010
+  suite: ambiguity
+  lang: nb
+  source: 'Total: 1,500. Source explicitly uses US dollar thousands separators.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 150000
+      currency: NOK
+  ambiguity: context
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Explicit locale resolves grouping.
+  origin: handwritten
+- id: ambiguity-0011
+  suite: ambiguity
+  lang: nb
+  source: 'Total: 1.500. Source explicitly uses German thousands separators.'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 150000
+      currency: NOK
+  ambiguity: context
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Explicit locale resolves grouping.
+  origin: handwritten
+- id: ambiguity-0012
+  suite: ambiguity
+  lang: nb
+  source: Two invoices show 100,00 and 200,00. Which invoice is unspecified.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      flag: true
+      currency: NOK
+  ambiguity: 'true'
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Task lacks an invoice selector.
+  origin: handwritten
+- id: ambiguity-0013
+  suite: ambiguity
+  lang: nb
+  source: Å betale kr 0,00. Ingen restgjeld.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 0
+      currency: NOK
+  ambiguity: context
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Explicit zero is determinate.
+  origin: handwritten
+- id: ambiguity-0014
+  suite: ambiguity
+  lang: nb
+  source: Sum 100,00 eller 1 000,00, avventer avklaring.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      flag: true
+      currency: NOK
+  ambiguity: 'true'
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Two mutually exclusive amounts remain.
+  origin: handwritten
+- id: ambiguity-0015
+  suite: ambiguity
+  lang: nb
+  source: Total NOK 1 500. Whole kroner.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 150000
+      currency: NOK
+  ambiguity: context
+  flag_ok: false
+  tags:
+  - ambiguity
+  rationale: Space grouping and integer units are explicit.
+  origin: handwritten

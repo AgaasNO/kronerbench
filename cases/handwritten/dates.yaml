@@ -1,0 +1,150 @@
+- id: dates-0001
+  suite: dates
+  lang: nb
+  source: Fakturadato 03.04.2026
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2026-04-03'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Dotted European date.
+  origin: handwritten
+- id: dates-0002
+  suite: dates
+  lang: nb
+  source: Dato 3/4-26
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2026-04-03'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Norwegian informal day-first form.
+  origin: handwritten
+- id: dates-0003
+  suite: dates
+  lang: nb
+  source: Dato 3. april 2026
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2026-04-03'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Named Norwegian month.
+  origin: handwritten
+- id: dates-0004
+  suite: dates
+  lang: nb
+  source: Date 2026-04-03
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2026-04-03'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: ISO date.
+  origin: handwritten
+- id: dates-0005
+  suite: dates
+  lang: nb
+  source: Date 04/03/2026; locale unknown.
+  instruction: Record the date.
+  fields:
+    date:
+      flag: true
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Slash month and day can swap.
+  origin: handwritten
+- id: dates-0006
+  suite: dates
+  lang: nb
+  source: Due 13/04/2026
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2026-04-13'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Thirteen cannot be a month.
+  origin: handwritten
+- id: dates-0007
+  suite: dates
+  lang: nb
+  source: US invoice, date 04/03/2026; explicit MM/DD/YYYY.
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2026-04-03'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Explicit US format resolves order.
+  origin: handwritten
+- id: dates-0008
+  suite: dates
+  lang: nb
+  source: Dato 29.02.2024
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2024-02-29'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Leap day in a leap year.
+  origin: handwritten
+- id: dates-0009
+  suite: dates
+  lang: nb
+  source: Dato 31.12.2026
+  instruction: Record the date.
+  fields:
+    date:
+      expected_date: '2026-12-31'
+      currency: DATE
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Year end.
+  origin: handwritten
+- id: dates-0010
+  suite: dates
+  lang: nb
+  source: Dato uleselig; bestillingsdato 01.01.2026
+  instruction: Record the date.
+  fields:
+    date:
+      flag: true
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - dates
+  rationale: Order date does not establish invoice date.
+  origin: handwritten

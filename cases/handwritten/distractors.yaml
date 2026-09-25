@@ -1,0 +1,200 @@
+- id: distractors-0001
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    KID 0000000000000
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0002
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Konto 0000 00 00000
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0003
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Org.nr. 000 000 000 MVA
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0004
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Faktura 2026-0417
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0005
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Dato 03.04.2026
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0006
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Ordre 123450
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0007
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Telefon i testdata: 00000000
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0008
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Kundenummer 12500
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0009
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Referanse 00123450
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten
+- id: distractors-0010
+  suite: distractors
+  lang: nb
+  source: 'SYNTETISK TESTDOKUMENT
+
+    Antall 1234
+
+    Å betale NOK 1 234,50'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 123450
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - space-comma
+  - identifier-distractor
+  rationale: The labeled amount takes precedence over the identifier.
+  origin: handwritten

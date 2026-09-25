@@ -1,0 +1,235 @@
+- id: scale-0001
+  suite: scale
+  lang: nb
+  source: 'Beløp i TNOK
+
+    Å betale 1 250'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 125000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: TNOK multiplies the cell by one thousand.
+  origin: handwritten
+- id: scale-0002
+  suite: scale
+  lang: nb
+  source: Total 1,5 mrd. kr
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 150000000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Mrd. is one billion kroner.
+  origin: handwritten
+- id: scale-0003
+  suite: scale
+  lang: nb
+  source: Å betale 12 MNOK
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1200000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: MNOK denotes millions.
+  origin: handwritten
+- id: scale-0004
+  suite: scale
+  lang: nb
+  source: 'Beträge in T€
+
+    Gesamt 12'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1200000
+      currency: EUR
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: T€ multiplies euros by one thousand.
+  origin: handwritten
+- id: scale-0005
+  suite: scale
+  lang: nb
+  source: 'Chat: total 2,5k NOK'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 250000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: k means thousand.
+  origin: handwritten
+- id: scale-0006
+  suite: scale
+  lang: nb
+  source: 'Beløp i tusen kroner
+
+    Total 1,25'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 125000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: A fractional thousand equals 1250 kroner.
+  origin: handwritten
+- id: scale-0007
+  suite: scale
+  lang: nb
+  source: Total 0,5 mill. NOK
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 50000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Half a million.
+  origin: handwritten
+- id: scale-0008
+  suite: scale
+  lang: nb
+  source: Total 1 000 kroner. Beløp ikke i tusen.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Negated scale instruction must not be applied.
+  origin: handwritten
+- id: scale-0009
+  suite: scale
+  lang: nb
+  source: Å betale 2 mrd. NOK
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 200000000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Two billion.
+  origin: handwritten
+- id: scale-0010
+  suite: scale
+  lang: nb
+  source: 'Beløp i MNOK
+
+    Total 0,01'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: One hundredth million.
+  origin: handwritten
+- id: scale-0011
+  suite: scale
+  lang: nb
+  source: Total 12 tusen kroner
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 1200000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Written thousand multiplier.
+  origin: handwritten
+- id: scale-0012
+  suite: scale
+  lang: nb
+  source: Total 1 million kroner
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 100000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Singular million multiplier.
+  origin: handwritten
+- id: scale-0013
+  suite: scale
+  lang: nb
+  source: Total 25 kNOK
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 2500000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: kNOK means thousands of kroner.
+  origin: handwritten
+- id: scale-0014
+  suite: scale
+  lang: nb
+  source: NOK 3,75 mill.
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: 375000000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Fractional million.
+  origin: handwritten
+- id: scale-0015
+  suite: scale
+  lang: nb
+  source: 'Beløp i TNOK
+
+    Total -12'
+  instruction: Record the amount to pay.
+  fields:
+    total:
+      expected_minor: -1200000
+      currency: NOK
+  ambiguity: none
+  flag_ok: false
+  tags:
+  - scale
+  rationale: Scale does not erase a negative sign.
+  origin: handwritten

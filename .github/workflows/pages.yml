@@ -1,0 +1,29 @@
+name: Published report
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require a completed published run
+        run: test -f results/published.json
+      - name: Download audited report artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download v0.1.0 --pattern report.tar.zst --dir /tmp
+      - run: mkdir -p reports/latest && tar --zstd -xf /tmp/report.tar.zst -C reports/latest
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: reports/latest
+      - id: deployment
+        uses: actions/deploy-pages@v4
