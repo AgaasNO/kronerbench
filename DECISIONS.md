@@ -37,3 +37,5 @@
 - Generate the pilot README findings directly from summary.json and test their provenance alongside the combined smoke-plus-pilot spending total.
 - Bind browser-QA evidence to the rendered run id and store relative local report paths for portable public artifacts.
 - Visual review found clipped model labels and duplicate rounded percentage ticks; use readable model names, two-line condition labels and decimal percentage ticks in charts.
+- Explain leaderboard conditions and outcome rates in place, show each cell's scored-field count on mobile, and sort accuracy high to low.
+- Publish the explanatory report as a new prerelease and preserve the original pilot tag and its audit trail.

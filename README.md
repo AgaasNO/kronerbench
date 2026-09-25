@@ -21,7 +21,7 @@ These are **provisional findings**. The independent two-model case audit is stil
 and this smaller experiment does not establish results for frontier models.
 
 [Interactive report](https://agaasno.github.io/kronerbench/) ·
-[Raw run and offline report](https://github.com/AgaasNO/kronerbench/releases/tag/budget-pilot-20260925) ·
+[Raw run and offline report](https://github.com/AgaasNO/kronerbench/releases/tag/budget-pilot-20260925-explained) ·
 [Frozen analysis plan](ANALYSIS_PLAN.md)
 
 ## Pilot findings
@@ -127,6 +127,12 @@ on held-out evaluation cases. The verifier is outside this budget profile.
 This table includes money, rate and date fields. Jev includes evaluation cases only.
 Read silent errors alongside loud failures: a model that flags everything records no
 wrong values but does not complete the bookkeeping task.
+
+On the leaderboard, **strict** means rewriting a source amount as `1234,56`.
+**Lenient** accepts the source's own format if code can read it unambiguously.
+**Select** asks the model to choose from amounts extracted from the document.
+**JSON number** asks for a numeric value such as `1234.56`. Accuracy counts
+correct bookings and justified review flags; a wrong booked value is a silent error.
 
 | Model | Condition | Silent error rate, 95% CI | Loud rate | Fields |
 | --- | --- | ---: | ---: | ---: |

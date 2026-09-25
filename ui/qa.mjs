@@ -28,6 +28,24 @@ try{
    const file=`${name}-${theme}-${width}.png`;
    await page.screenshot({path:path.join(root,'docs/img',file),fullPage:true});
    checks.push({page:name,width,theme,file,passed:true});
+   if(name==='leaderboard'){
+    await page.getByLabel('Metric').selectOption('accuracy');
+    await page.waitForTimeout(100);
+    const accuracyLead=await page.locator('.lead').textContent();
+    const ranking=await page.locator('.leaderboard-table tbody tr th').allTextContents();
+    const expected=await page.evaluate(()=>{
+     const cells=window.KRONERBENCH.summary.cells.filter(c=>c.suite==='all');
+     return [...new Set(cells.map(c=>c.model))].sort((a,b)=>{
+      const best=model=>Math.max(...cells.filter(c=>c.model===model).map(c=>c.accuracy));
+      return best(b)-best(a)||a.localeCompare(b);
+     });
+    });
+    if(!accuracyLead.includes('Higher is better')||JSON.stringify(ranking)!==JSON.stringify(expected)||errors.length)throw new Error(JSON.stringify({name,width,theme,accuracyLead,ranking,expected,errors}));
+    const accuracyFile=`leaderboard-accuracy-${theme}-${width}.png`;
+    await page.screenshot({path:path.join(root,'docs/img',accuracyFile),fullPage:true});
+    checks.push({page:'leaderboard-accuracy',width,theme,file:accuracyFile,passed:true});
+    await page.getByLabel('Metric').selectOption('ser');
+   }
   }
   await page.close();
  }

@@ -1,5 +1,10 @@
 # Changelog
 
+## Leaderboard guide, 2026-09-25
+
+Explained each recording method and accuracy measure beside the live table, showed
+scored-field counts, and made accuracy sort from highest to lowest.
+
 ## Budget pilot, 2026-09-25
 
 Added a 240-case budget profile capped at USD 5, persisted request-cost reservations,

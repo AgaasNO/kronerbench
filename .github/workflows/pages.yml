@@ -5,7 +5,7 @@ on:
       release:
         description: Release containing report.tar.zst
         required: true
-        default: budget-pilot-20260925
+        default: budget-pilot-20260925-explained
 permissions:
   contents: read
   pages: write
