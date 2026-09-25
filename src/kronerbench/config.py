@@ -30,7 +30,9 @@ def write_json(path: Path, value: Any) -> None:
 
 
 def decode_arguments(raw: str) -> dict[str, Any]:
-    value = json.loads(raw, parse_float=Decimal, parse_constant=lambda s: (_ for _ in ()).throw(ValueError(s)))
+    value = json.loads(
+        raw, parse_float=Decimal, parse_constant=lambda s: (_ for _ in ()).throw(ValueError(s))
+    )
     if not isinstance(value, dict):
         raise ValueError("Tool arguments must be an object.")
     return value
