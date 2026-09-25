@@ -24,3 +24,39 @@ def test_statistics_known_counts():
     assert tests[0]["p_adjusted"] == 0.03
     effect = cluster_bootstrap([("same-case", 1, 0)] * 20 + [("other", 0, 1)] * 20)
     assert effect["cases"] == 2 and effect["difference"] == 0 and effect["ci"] == [-1, 1]
+
+
+def test_jev_threshold_uses_only_calibration_cases():
+    from kronerbench.config import digest
+    from kronerbench.scoring.metrics import calibration
+
+    cal_id = next(f"case-{i}" for i in range(100) if int(digest(f"case-{i}")[:8], 16) % 100 < 30)
+    eval_id = next(f"case-{i}" for i in range(100) if int(digest(f"case-{i}")[:8], 16) % 100 >= 30)
+    rows = [
+        dict(
+            case_id=cal_id,
+            expected="100",
+            jev_candidate_value="100",
+            jev_confidence=0.9,
+            jev_ambiguous=0.1,
+        )
+        for _ in range(10)
+    ]
+    evaluation = [
+        dict(
+            case_id=eval_id,
+            expected="100",
+            jev_candidate_value="200",
+            jev_confidence=0.99,
+            jev_ambiguous=0.1,
+        )
+        for _ in range(10)
+    ]
+    first = calibration(rows + evaluation)
+    for row in evaluation:
+        row["expected"] = "200"
+    second = calibration(rows + evaluation)
+    assert first["threshold"] == second["threshold"]
+    assert first["curve"][0]["ser"] == 1
+    assert second["curve"][0]["ser"] == 0
+    assert first["calibration_n"] == first["evaluation_n"] == 10

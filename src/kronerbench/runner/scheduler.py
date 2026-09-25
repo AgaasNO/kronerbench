@@ -94,8 +94,10 @@ def plan(
     options = {**DEFAULTS, **raw}
     profiles = yaml.safe_load((ROOT / "config/profiles.yaml").read_text())
     if options["profile"] not in profiles:
-        raise typer.BadParameter("Choose quick, standard or full.")
+        raise typer.BadParameter("Choose quick, budget, standard or full.")
     profile = profiles[options["profile"]]
+    if "max_cost" in profile:
+        options["max_cost"] = min(options["max_cost"], profile["max_cost"])
     options["sample"] = options["sample"] or profile["sample"]
     options["repeats"] = options["repeats"] or profile["repeats"]
     if (
@@ -120,6 +122,8 @@ def plan(
         raise typer.BadParameter("Unknown condition. Choose " + ",".join(CONDITIONS))
     pool = models or configured()
     selected = [m for m in pool if options["profile"] == "full" or m["group"] != "frontier-xl"]
+    if "models" in profile:
+        selected = [m for m in pool if m["id"] in profile["models"]]
     if options["profile"] == "quick":
         selected = sorted(
             [m for m in selected if m["group"] != "decision"],
@@ -200,7 +204,7 @@ async def execute(
     manifest: dict[str, Any],
 ) -> None:
     cache = Cache(path / "transcripts.sqlite")
-    guard = CostGuard(options["max_cost"], manifest["total_cost_usd"])
+    guard = CostGuard(options["max_cost"], manifest["total_cost_usd"], path / "cost-ledger.json")
     transport = None if options["dry_run"] else Transport(guard)
     completed = set()
     trials_file = path / "trials.jsonl"

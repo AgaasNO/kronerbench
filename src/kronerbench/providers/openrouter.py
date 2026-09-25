@@ -1,6 +1,7 @@
 """OpenRouter transport and capability discovery, isolated from experimental logic."""
 
 import asyncio
+import json
 import os
 import random
 import subprocess
@@ -48,10 +49,16 @@ async def discover(group: str = "") -> list[dict[str, Any]]:
         async def one(model: dict[str, Any]) -> dict[str, Any]:
             requested = model["id"]
             r = await client.get(BASE + "/api/v1/models/" + requested + "/endpoints")
-            if r.status_code == 404 or (r.status_code == 200 and not r.json().get("data", {}).get("endpoints")):
+            if r.status_code == 404 or (
+                r.status_code == 200 and not r.json().get("data", {}).get("endpoints")
+            ):
                 # Latest aliases can be absent from the endpoints path; resolve within the same family.
                 family = requested.removeprefix("~").removesuffix("-latest")
-                options = [m for name, m in catalog.items() if name.startswith(family) and ":" not in name and not name.startswith("~")]
+                options = [
+                    m
+                    for name, m in catalog.items()
+                    if name.startswith(family) and ":" not in name and not name.startswith("~")
+                ]
                 if not options:
                     raise ProviderError(
                         f"Model {requested} is unavailable and has no obvious family replacement."
@@ -116,6 +123,9 @@ class Transport:
             await self.guard.reserve(maximum)
             try:
                 response = await self.client.post(BASE + path, json=body, headers=headers)
+            except asyncio.CancelledError:
+                await self.guard.settle(maximum, maximum)
+                raise
             except (httpx.TimeoutException, httpx.TransportError):
                 # Unknown billing after transport failure is conservatively charged at the reserved ceiling.
                 await self.guard.settle(maximum, maximum)
@@ -163,10 +173,17 @@ class Transport:
                 if attempt < 4:
                     await asyncio.sleep(min(2**attempt + random.random(), 15))
                     continue
+                raise ProviderError(f"Provider HTTP {response.status_code} after five tries.")
             if response.is_error:
                 await self.guard.settle(maximum, Decimal(0))
                 raise ProviderError(f"Provider HTTP {response.status_code}: {response.text[:300]}")
-            data = response.json()
+            try:
+                data = response.json()
+            except (json.JSONDecodeError, ValueError):
+                await self.guard.settle(maximum, maximum)
+                raise ProviderError(
+                    "Provider returned invalid JSON; reserved ceiling retained for uncertain billing."
+                ) from None
             if "error" in data:
                 await self.guard.settle(maximum, Decimal(str(data.get("usage", {}).get("cost", 0))))
                 raise ProviderError(f"Provider response error: {data['error']}")

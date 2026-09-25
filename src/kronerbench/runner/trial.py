@@ -67,6 +67,7 @@ async def trial(
     user = case.source + "\n\n" + case.instruction + "\nFields: " + ", ".join(case.fields)
     if condition == "select":
         user += (
+            "\nCandidate values are integer minor units for money (100 minor units = one major currency unit), percentage points for rates, or ISO strings for dates."
             "\nCandidates: "
             + dumps([c.to_dict() for c in candidates])
             + "\nnone_of_these: absent or uncertain"
