@@ -12,12 +12,27 @@ verbatim copying, JSON numbers and selection from extracted candidates. Its main
 metric is the **silent error rate**: wrong values actually committed through tools.
 Rejected values are counted separately.
 
-![Fixture report, not live benchmark evidence](docs/img/verdict-light-1440.png)
+[![Budget pilot report](docs/img/verdict-light-1440.png)](https://agaasno.github.io/kronerbench/)
 
-This is an implementation checkpoint. The screenshot uses deterministic fake models.
-There are **no published live benchmark findings** yet. The live-price standard
-estimate is USD 102.70, above the USD 75 spending cap. See the [estimate](results/standard-estimate.json)
-and [remaining work](docs/STATUS.md).
+The **budget pilot cost USD 0.4719 including its smoke test**, below the USD 5 cap.
+It covers 240 cases, four economical LLMs and Jev, with 3,980 applicable trials
+and no API failures. One hundred selection cells are n/a because they concern words.
+These are **provisional findings**. The independent two-model case audit is still pending,
+and this smaller experiment does not establish results for frontier models.
+
+[Interactive report](https://agaasno.github.io/kronerbench/) ·
+[Raw run and offline report](https://github.com/AgaasNO/kronerbench/releases/tag/budget-pilot-20260925) ·
+[Frozen analysis plan](ANALYSIS_PLAN.md)
+
+## Pilot findings
+
+- Money fields, strict minus lenient: -4.58 percentage points, case-bootstrap 95% interval -6.85 to -2.54.
+- scale has the highest pooled silent error rate: 23.24% across 340 scored fields.
+- 0 retries changed a recoverable correct value into a silent error.
+
+These findings are copied from [summary.json](results/budget-summary.json) and checked
+by a test. The primary comparison includes money fields only. Rates and dates are
+secondary results. Intervals describe this synthetic sample, not production prevalence.
 
 ## The problem in 30 seconds
 
@@ -51,10 +66,22 @@ uv run kronerbench parse '1,234.50' --parser naive  # value: 123
 The naive parser removes the decimal dot. This example is a deterministic parser
 calculation, not a claim about model behavior.
 
-For paid work, export `OPENROUTER_API_KEY` or put it in an untracked `.env`, then
-run `uv run kronerbench doctor`, `uv run kronerbench estimate`, and review the
-estimate before `uv run kronerbench run --profile quick --max-cost 1`.
-The standard run remains blocked by the cap. Never commit a key.
+To run the cheaper profile from a source checkout:
+
+```sh
+uv sync --dev
+export OPENROUTER_API_KEY='your-key'
+uv run kronerbench estimate --profile budget
+uv run kronerbench run --profile budget --max-cost 5
+uv run kronerbench report latest --open
+```
+
+The budget profile uses GPT-5.6 Luna, DeepSeek V4.1 Flash, GLM 5.3 Flash, Tencent Hy3
+and Jev 1.13. The LLM conditions are strict, lenient, JSON number and select;
+Jev runs select only. It reserves request costs before sending calls and stops at the cap.
+Actual costs vary. Its default estimate was USD 3.34; short responses made this run cheaper.
+The original standard profile estimated USD 102.70 and remains outside the new budget.
+Never commit a key.
 
 ## What's tested
 
@@ -92,7 +119,42 @@ Every authored case includes its rationale.
 
 Jev is a decision model. It only participates in selection and optional verification.
 Its adapter preserves confidence, probabilities and the dated model snapshot.
-The calibration and verifier reporting work is tracked in [implementation status](docs/STATUS.md).
+The pilot chooses its threshold on calibration cases and reports Jev headline scores
+on held-out evaluation cases. The verifier is outside this budget profile.
+
+## Pilot results
+
+This table includes money, rate and date fields. Jev includes evaluation cases only.
+Read silent errors alongside loud failures: a model that flags everything records no
+wrong values but does not complete the bookkeeping task.
+
+| Model | Condition | Silent error rate, 95% CI | Loud rate | Fields |
+| --- | --- | ---: | ---: | ---: |
+| `deepseek/deepseek-v4.1-flash` | `json_number` | 3.57% [1.95, 6.45] | 13.93% | 280 |
+| `deepseek/deepseek-v4.1-flash` | `lenient` | 5.00% [3.00, 8.22] | 15.71% | 280 |
+| `deepseek/deepseek-v4.1-flash` | `select` | 0.77% [0.21, 2.76] | 2.69% | 260 |
+| `deepseek/deepseek-v4.1-flash` | `strict` | 1.43% [0.56, 3.61] | 16.07% | 280 |
+| `openai/gpt-5.6-luna` | `json_number` | 0.36% [0.06, 1.99] | 23.93% | 280 |
+| `openai/gpt-5.6-luna` | `lenient` | 3.93% [2.21, 6.90] | 21.07% | 280 |
+| `openai/gpt-5.6-luna` | `select` | 1.54% [0.60, 3.89] | 1.92% | 260 |
+| `openai/gpt-5.6-luna` | `strict` | 0.36% [0.06, 1.99] | 17.86% | 280 |
+| `tencent/hy3` | `json_number` | 3.21% [1.70, 5.99] | 25.71% | 280 |
+| `tencent/hy3` | `lenient` | 5.71% [3.55, 9.08] | 25.71% | 280 |
+| `tencent/hy3` | `select` | 0.38% [0.07, 2.15] | 1.92% | 260 |
+| `tencent/hy3` | `strict` | 3.21% [1.70, 5.99] | 26.07% | 280 |
+| `typesafe/jev-1.13` | `select` | 0.52% [0.09, 2.89] | 11.46% | 192 |
+| `z-ai/glm-5.3-flash` | `json_number` | 3.93% [2.21, 6.90] | 8.57% | 280 |
+| `z-ai/glm-5.3-flash` | `lenient` | 7.50% [4.96, 11.19] | 10.00% | 280 |
+| `z-ai/glm-5.3-flash` | `select` | 0.77% [0.21, 2.76] | 2.69% | 260 |
+| `z-ai/glm-5.3-flash` | `strict` | 1.43% [0.56, 3.61] | 2.14% | 280 |
+
+![Paired strict-minus-lenient money comparison](docs/img/strict-vs-lenient-light-1440.png)
+
+![Cost versus silent error rate](docs/img/cost-vs-reliability-light-1440.png)
+
+For an application, track wrong commitments and rejected values separately. This
+pilot does not support assuming that lenient parsing always reduces silent errors.
+See the report's Parser lab for parser-only differences on identical model outputs.
 
 ## Inspect and reproduce
 
@@ -143,8 +205,10 @@ a low base error rate.
 
 Cases are synthetic and balanced across traps, so their error rate does not estimate
 production prevalence. Provider routing, model updates, prompt wording and prices
-can change results. No case audit or frozen analysis plan exists yet. Fixture output
-must never be cited as evidence for a hypothesis.
+can change results. The pilot analysis plan was committed before paid trials;
+the independent case audit remains pending. The report marks untested hypotheses
+inconclusive. The larger standard study and optional verifier remain unfinished;
+see [implementation status](docs/STATUS.md). Fixture output is never research evidence.
 
 ## Prior work and licence
 

@@ -33,3 +33,7 @@
 - 2026-09-25: Apply Jev's calibration threshold in scoring and exclude calibration cases from headline Jev cells; retain raw provisional actions in transcripts.
 - 2026-09-25: Separate rate and date suites from the primary paired money comparison; keep their results in secondary suite tables.
 - 2026-09-25: Defer the expensive two-strong-model catalogue audit and describe the budget run as a provisional pilot, not the complete standard study.
+- Label budget results and report pages as a provisional pilot; publish its report as a prerelease with a pinned checksum, without marking the full standard-study checklist complete.
+- Generate the pilot README findings directly from summary.json and test their provenance alongside the combined smoke-plus-pilot spending total.
+- Bind browser-QA evidence to the rendered run id and store relative local report paths for portable public artifacts.
+- Visual review found clipped model labels and duplicate rounded percentage ticks; use readable model names, two-line condition labels and decimal percentage ticks in charts.

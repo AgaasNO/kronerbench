@@ -26,7 +26,7 @@ def paired(a: list[int], b: list[int]) -> dict[str, Any]:
     positive = sum(x == 1 and y == 0 for x, y in zip(a, b, strict=True))
     negative = sum(x == 0 and y == 1 for x, y in zip(a, b, strict=True))
     delta = (positive - negative) / n
-    # Paired score interval (Newcombe): Wilson intervals for discordant proportions.
+    # Approximate score interval from Wilson bounds on discordant proportions.
     pa, pb = wilson(positive, n), wilson(negative, n)
     assert all(v is not None for v in pa + pb)
     lo = delta - math.sqrt((positive / n - float(pa[0])) ** 2 + (float(pb[1]) - negative / n) ** 2)  # type: ignore[arg-type]
