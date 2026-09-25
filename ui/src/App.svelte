@@ -12,6 +12,31 @@
  const overall:Row[]=summary.cells.filter((c:Row)=>c.suite==='all');
  const conditionNames=[...new Set(overall.map(c=>c.condition))] as string[];
  const modelNames=[...new Set(overall.map(c=>c.model))] as string[];
+ const conditionCopy:Record<string,{name:string,detail:string}>={
+  strict:{name:'Strict',detail:'Rewrite the source amount in a fixed format, such as 1234,56.'},
+  strict_constrained:{name:'Constrained strict',detail:'Use the strict format, with a tool schema that also restricts the output.'},
+  lenient:{name:'Lenient',detail:'Copy a normal source format, such as 1.234,56. Code parses it only when the value is unambiguous.'},
+  verbatim:{name:'Verbatim',detail:'Copy the exact amount from the source; code checks that it really appears there.'},
+  json_number:{name:'JSON number',detail:'Write a JSON number with a decimal point, such as 1234.56.'},
+  minor_units:{name:'Minor units',detail:'Write an integer number of øre or cents.'},
+  select:{name:'Select',detail:'Choose from amounts extracted from the document, or flag the field for review.'}
+ };
+ const metricCopy:Record<string,string>={
+  ser:'Silent error rate: the share of fields where a wrong value was recorded. Lower is safer.',
+  accuracy:'Accuracy: the share of fields recorded correctly or correctly flagged for review. Higher is better.',
+  loud_rate:'Loud failure rate: the share left unresolved or flagged when a definite value was available. Lower is better.',
+  usd_per_1000:'Estimated USD spent per 1,000 scored fields. Lower is cheaper.',
+  p95_ms:'95th percentile trial time in milliseconds. Lower is faster.'
+ };
+ const example=overall.filter(c=>c.condition==='strict'&&c.n&&c.silent>0&&c.loud_rate>0).sort((a,b)=>b.accuracy-a.accuracy)[0];
+ $: rankedModels=[...modelNames].sort((a,b)=>{
+  const best=(model:string)=>{
+   const values=overall.filter(c=>c.model===model&&c[metric]!=null).map(c=>c[metric] as number);
+   return metric==='accuracy'?Math.max(...values):Math.min(...values);
+  };
+  const difference=metric==='accuracy'?best(b)-best(a):best(a)-best(b);
+  return difference||a.localeCompare(b);
+ });
  const counts=(group:Row[])=>{const scored=group.filter(r=>r.outcome!=='api_error');return scored.length?scored.filter(r=>r.outcome==='silent_error').length/scored.length:0};
  const aggregate=(key:string)=>{const map=new Map<string,Row[]>();for(const r of rows){const k=String(r[key]);map.set(k,[...(map.get(k)||[]),r])}return [...map].map(([y,g])=>({y,x:counts(g)}))};
  const forest=summary.comparisons.filter((c:Row)=>c.a==='lenient'&&c.b==='strict'&&c.n).map((c:Row)=>({y:c.model,x:-c.difference,lo:-c.ci[1],hi:-c.ci[0]}));
@@ -45,9 +70,12 @@
   <section><div class="section-title"><h2>Wrong values committed</h2><span>Lower is better</span></div><Chart data={summary.conditions.filter((c:Row)=>c.ser!=null).map((c:Row)=>({y:c.condition,x:c.ser}))}/></section>
   <div class="two"><section><h2>What the run found</h2>{#each summary.findings as finding}<a class="finding" href={'#'+finding.page} onclick={()=>{page=finding.page}}>{finding.text}<span>Explore ↗</span></a>{/each}</section><section><h2>Hypotheses, including null results</h2>{#each summary.hypotheses as h}<div class="hypothesis"><strong>{h.id}</strong><span>{h.status}</span><small>{h.detail}</small></div>{/each}</section></div>
  {:else if page==='leaderboard'}
-  <p class="lead">{[...overall].sort((a,b)=>(a.ser??2)-(b.ser??2))[0]?.model} has the lowest observed SER in at least one condition. Compare intervals before ranking.</p>
+  <p class="lead">{metricCopy[metric]}</p>
   <label>Metric <select bind:value={metric}><option value="ser">Silent error rate</option><option value="accuracy">Accuracy</option><option value="loud_rate">Loud rate</option><option value="usd_per_1000">USD / 1,000</option><option value="p95_ms">p95 latency, ms</option></select></label>
-  <section class="table-wrap"><table><thead><tr><th>Model</th>{#each conditionNames as c}<th>{c}</th>{/each}</tr></thead><tbody>{#each [...modelNames].sort((a,b)=>{const get=(m:string)=>Math.min(...overall.filter(c=>c.model===m).map(c=>c[metric]??Infinity));return get(a)-get(b)}) as model}<tr><th>{model}</th>{#each conditionNames as condition}{@const c=overall.find(c=>c.model===model&&c.condition===condition)}<td class:silent={metric==='ser'&&c?.ser>0} title={c?`95% SER CI ${fmt(c.ser_ci[0])} to ${fmt(c.ser_ci[1])}; n=${c.n}`:'n/a: not applicable or unsupported'}>{c?(metric.includes('usd')||metric.includes('ms')?c[metric]?.toFixed(2):fmt(c[metric])):'n/a'}</td>{/each}</tr>{/each}</tbody></table></section>
+  <section class="reading-guide"><h2>What the columns mean</h2><p>These examples show money amounts. Rates and dates have their own rules on the Methods page.</p><div class="condition-grid">{#each conditionNames as condition}<article><h3>{conditionCopy[condition]?.name||condition}</h3><p>{conditionCopy[condition]?.detail||'See Methods for this condition.'}</p></article>{/each}</div><p class="note">For each field, a model can get it right, record a wrong value silently, or fail to record a recoverable value. Accuracy, silent error rate and loud failure rate add to 100%.</p>{#if example}<p class="reading-example">Example: {example.model} with Strict handled {Math.round(example.accuracy*example.n)} of {example.n} fields correctly. It recorded {example.silent} wrong values and left {example.n-Math.round(example.accuracy*example.n)-example.silent} unresolved.</p>{/if}</section>
+  <p class="note">Each cell shows its number of scored fields. Select skips cases with amounts written only as words; Jev uses a separate evaluation sample. Compare models within the same column, and check both silent errors and loud failures.</p>
+  <p class="table-swipe-hint">Swipe the table sideways to see every condition.</p>
+  <section class="table-wrap"><table class="leaderboard-table"><thead><tr><th>Model</th>{#each conditionNames as c}<th>{conditionCopy[c]?.name||c}</th>{/each}</tr></thead><tbody>{#each rankedModels as model}<tr><th>{model}</th>{#each conditionNames as condition}{@const c=overall.find(c=>c.model===model&&c.condition===condition)}<td class:silent={metric==='ser'&&c?.ser>0} title={c?`95% SER CI ${fmt(c.ser_ci[0])} to ${fmt(c.ser_ci[1])}; n=${c.n}`:'n/a: not applicable or unsupported'}>{#if c}{metric.includes('usd')||metric.includes('ms')?c[metric]?.toFixed(2):fmt(c[metric])}<small>{c.n} fields</small>{:else}n/a{/if}</td>{/each}</tr>{/each}</tbody></table></section>
  {:else if page==='strict-vs-lenient'}
   <p class="lead">{summary.findings.find((f:Row)=>f.id==='paired')?.text}</p><section><h2>Paired silent error difference</h2><p>Left favors strict. Right favors lenient. Each row uses the same cases, fields and repeats.</p><Chart kind="forest" data={forest} label="SER strict − lenient"/></section><p class="note">{summary.power_note}</p><section><h2>All condition estimates</h2><Chart kind="forest" data={overall.filter(c=>c.ser!=null).map(c=>({y:c.model+' · '+c.condition,x:c.ser,lo:c.ser_ci[0],hi:c.ser_ci[1]}))}/></section>
  {:else if page==='where-it-breaks'}

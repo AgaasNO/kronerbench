@@ -26,6 +26,7 @@ def test_pilot_readme_numbers_and_budget_have_committed_evidence():
     assert manifest["analysis_plan_commit"] == smoke["analysis_plan_commit"]
     assert len(manifest["analysis_plan_commit"]) == 40
     assert f"USD {evidence['total_cost_usd']:.4f}" in readme
+    assert f"releases/tag/{evidence['release_tag']}" in readme
     for finding in summary["findings"]:
         assert finding["text"] in readme
     assert "provisional" in readme.lower()

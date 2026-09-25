@@ -18,6 +18,13 @@
       "passed": true
     },
     {
+      "page": "leaderboard-accuracy",
+      "width": 1440,
+      "theme": "light",
+      "file": "leaderboard-accuracy-light-1440.png",
+      "passed": true
+    },
+    {
       "page": "strict-vs-lenient",
       "width": 1440,
       "theme": "light",
@@ -92,6 +99,13 @@
       "width": 1440,
       "theme": "dark",
       "file": "leaderboard-dark-1440.png",
+      "passed": true
+    },
+    {
+      "page": "leaderboard-accuracy",
+      "width": 1440,
+      "theme": "dark",
+      "file": "leaderboard-accuracy-dark-1440.png",
       "passed": true
     },
     {
@@ -172,6 +186,13 @@
       "passed": true
     },
     {
+      "page": "leaderboard-accuracy",
+      "width": 390,
+      "theme": "light",
+      "file": "leaderboard-accuracy-light-390.png",
+      "passed": true
+    },
+    {
       "page": "strict-vs-lenient",
       "width": 390,
       "theme": "light",
@@ -246,6 +267,13 @@
       "width": 390,
       "theme": "dark",
       "file": "leaderboard-dark-390.png",
+      "passed": true
+    },
+    {
+      "page": "leaderboard-accuracy",
+      "width": 390,
+      "theme": "dark",
+      "file": "leaderboard-accuracy-dark-390.png",
       "passed": true
     },
     {
