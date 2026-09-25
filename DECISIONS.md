@@ -26,3 +26,14 @@
 - 2026-09-25: Pages and release workflows require a published-run record and are not invoked for this fixture-only checkpoint.
 - 2026-09-25: A tool-managed local checkpoint ref contains the original `.env`; it is outside both publishing branches. Scan the complete histories of `main` and `feat/kronerbench` and push those refs explicitly without exporting local checkpoint refs.
 - 2026-09-25: Disable setup-uv caching in the live-contract job because it skips dependency installation when no repository secret exists; otherwise the action's post step fails while trying to save an absent cache directory.
+- 2026-09-25: The owner reduced the authorized budget to USD 5 maximum; use a 240-case budget pilot with Luna, DeepSeek Flash, GLM Flash, Hy3 and Jev, retaining strict, lenient, JSON number and selection.
+- 2026-09-25: Budget defaults clamp the per-run cap to USD 5; the smoke test is limited to USD 0.10 and its cost is deducted before the main pilot.
+- 2026-09-25: Save reservations before requests and retain possible charges after cancellation or process death; prevent repeated 5xx responses from settling the same reservation twice.
+- 2026-09-25: State candidate units explicitly in LLM prompts because extractor values are integer minor units.
+- 2026-09-25: Apply Jev's calibration threshold in scoring and exclude calibration cases from headline Jev cells; retain raw provisional actions in transcripts.
+- 2026-09-25: Separate rate and date suites from the primary paired money comparison; keep their results in secondary suite tables.
+- 2026-09-25: Defer the expensive two-strong-model catalogue audit and describe the budget run as a provisional pilot, not the complete standard study.
+- Label budget results and report pages as a provisional pilot; publish its report as a prerelease with a pinned checksum, without marking the full standard-study checklist complete.
+- Generate the pilot README findings directly from summary.json and test their provenance alongside the combined smoke-plus-pilot spending total.
+- Bind browser-QA evidence to the rendered run id and store relative local report paths for portable public artifacts.
+- Visual review found clipped model labels and duplicate rounded percentage ticks; use readable model names, two-line condition labels and decimal percentage ticks in charts.

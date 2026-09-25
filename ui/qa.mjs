@@ -7,12 +7,14 @@ const target=process.env.KB_REPORT||path.join(root,'reports/latest/index.html');
 const pages=['verdict','leaderboard','strict-vs-lenient','where-it-breaks','error-anatomy','retry-lab','parser-lab','cost-vs-reliability','jev-and-confidence','case-explorer','methods'];
 const browser=await chromium.launch({headless:true});
 const checks=[];
+let runId;
 await fs.mkdir(path.join(root,'docs/img'),{recursive:true});
 try{
  for(const width of [1440,390])for(const theme of ['light','dark']){
   const page=await browser.newPage({viewport:{width,height:1000},deviceScaleFactor:1});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
   await page.goto(target.startsWith('http')?target:pathToFileURL(target).href);
+  runId=await page.evaluate(()=>window.KRONERBENCH.manifest.run_id);
   if(theme==='dark')await page.getByRole('button',{name:'Toggle dark mode'}).click();
   for(const name of pages){
    await page.evaluate(name=>location.hash=name,name);
@@ -29,6 +31,6 @@ try{
   }
   await page.close();
  }
- await fs.writeFile(path.join(root,'docs/img/qa.json'),JSON.stringify({passed:true,report:target,checks},null,2)+'\n');
+ await fs.writeFile(path.join(root,'docs/img/qa.json'),JSON.stringify({passed:true,run_id:runId,report:target.startsWith('http')?target:path.relative(root,target),checks},null,2)+'\n');
  console.log(`Passed ${checks.length} views: no console errors, horizontal overflow or empty charts.`);
 }finally{await browser.close()}

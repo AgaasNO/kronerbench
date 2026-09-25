@@ -1,6 +1,11 @@
-name: Published report
+name: Benchmark report
 on:
   workflow_dispatch:
+    inputs:
+      release:
+        description: Release containing report.tar.zst
+        required: true
+        default: budget-pilot-20260925
 permissions:
   contents: read
   pages: write
@@ -14,12 +19,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Require a completed published run
-        run: test -f results/published.json
-      - name: Download audited report artifact
+      - name: Download report artifact
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download v0.1.0 --pattern report.tar.zst --dir /tmp
+          REPORT_RELEASE: ${{ inputs.release }}
+        run: gh release download "$REPORT_RELEASE" --pattern report.tar.zst --dir /tmp
+      - name: Verify the reviewed report checksum
+        env:
+          REPORT_RELEASE: ${{ inputs.release }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, pathlib
+          evidence = json.loads(pathlib.Path('results/pilot.json').read_text())
+          assert evidence['release_tag'] == os.environ['REPORT_RELEASE']
+          actual = hashlib.sha256(pathlib.Path('/tmp/report.tar.zst').read_bytes()).hexdigest()
+          assert actual == evidence['report_sha256'], 'Report artifact checksum mismatch'
+          assert evidence['total_cost_usd'] <= evidence['spending_cap_usd']
+          assert evidence['scored_trial_fraction'] >= 0.95
+          PY
       - run: mkdir -p reports/latest && tar --zstd -xf /tmp/report.tar.zst -C reports/latest
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

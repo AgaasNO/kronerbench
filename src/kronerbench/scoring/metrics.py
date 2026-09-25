@@ -105,6 +105,7 @@ def field_rows(
                 condition=trial["condition"],
                 repeat=trial["repeat"],
                 expected=str(truth.expected) if truth.expected is not None else "FLAG",
+                flag_ok=case.flag_ok,
                 committed=str(result.get("value")) if result["action"] == "record" else None,
                 outcome=state,
                 error_class=classify(
@@ -132,6 +133,11 @@ def field_rows(
                 jev_ambiguous=result.get("jev_ambiguous"),
                 jev_candidate_value=str(result["jev_candidate_value"])
                 if result.get("jev_candidate_value") is not None
+                else None,
+                jev_split=(
+                    "calibration" if int(digest(case.id)[:8], 16) % 100 < 30 else "evaluation"
+                )
+                if result.get("jev_confidence") is not None
                 else None,
                 verifier_noul=result.get("verifier_noul"),
                 currency_ok=(result.get("currency") == truth.currency)
@@ -243,7 +249,10 @@ def summarize(
 ) -> dict[str, Any]:
     groups: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     by_condition: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for row in rows:
+    # Raw trial decisions stay in the transcript; headlines use the frozen
+    # calibrated policy on held-out cases only.
+    headline_rows = [r for r in rows if r.get("jev_split") != "calibration"]
+    for row in headline_rows:
         groups[(row["model"], row["condition"], row["suite"])].append(row)
         groups[(row["model"], row["condition"], "all")].append(row)
         by_condition[row["condition"]].append(row)
@@ -255,8 +264,12 @@ def summarize(
     pooled = []
     for model in sorted({r["model"] for r in rows}):
         lookups: dict[str, dict[tuple[str, str, int], dict[str, Any]]] = defaultdict(dict)
-        for row in rows:
-            if row["model"] == model and row["outcome"] != "api_error":
+        for row in headline_rows:
+            if (
+                row["model"] == model
+                and row["outcome"] != "api_error"
+                and row["suite"] not in ["percent", "dates"]
+            ):
                 lookups[row["condition"]][(row["case_id"], row["field"], row["repeat"])] = row
         tests = []
         for a, b in itertools.combinations(sorted(lookups), 2):
@@ -291,7 +304,7 @@ def summarize(
             dict(
                 id="paired",
                 page="strict-vs-lenient",
-                text=f"Strict minus lenient: {effect['difference'] * 100:.2f} percentage points, case-bootstrap 95% interval {effect['ci'][0] * 100:.2f} to {effect['ci'][1] * 100:.2f}.",
+                text=f"Money fields, strict minus lenient: {effect['difference'] * 100:.2f} percentage points, case-bootstrap 95% interval {effect['ci'][0] * 100:.2f} to {effect['ci'][1] * 100:.2f}.",
             )
         )
     suite_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -338,6 +351,7 @@ def summarize(
         schema_version="1.0",
         run_id=manifest["run_id"],
         fixture=manifest["dry_run"],
+        pilot=manifest.get("profile") == "budget",
         cells=cells,
         conditions=[
             dict(condition=c, **aggregate(group)) for c, group in sorted(by_condition.items())
@@ -364,6 +378,40 @@ def score_run(path: Path) -> dict[str, Any]:
     trials = [json.loads(line) for line in (path / "trials.jsonl").read_text().splitlines()]
     cases = {c["id"]: Case.model_validate(c) for c in read_json(path / "cases.json")}
     rows = field_rows(manifest["run_id"], trials, cases)
+    threshold = calibration(rows)["threshold"]
+    for row in rows:
+        if row["jev_confidence"] is None:
+            continue
+        commit = (
+            row["jev_confidence"] >= threshold
+            and row["jev_ambiguous"] < 0.5
+            and row["jev_candidate_value"] is not None
+        )
+        row["committed"] = row["jev_candidate_value"] if commit else None
+        row["outcome"] = (
+            ("correct" if row["committed"] == row["expected"] else "silent_error")
+            if commit
+            else ("correct_flag" if row["expected"] == "FLAG" or row["flag_ok"] else "loud_flag")
+        )
+        row["jev_threshold"] = threshold
+        case = cases[row["case_id"]]
+        value = row["jev_candidate_value"]
+        row["error_class"] = (
+            classify(
+                case.fields[row["field"]].expected,
+                int(value) if case.kind == "amount" else value,
+                case.source,
+                [
+                    c["value"]
+                    for t in trials
+                    if t["case_id"] == case.id and t["model"] == row["model"]
+                    for c in t["candidates"]
+                ],
+                case.kind,
+            )
+            if row["outcome"] == "silent_error"
+            else None
+        )
     table = pl.DataFrame(rows, infer_schema_length=None)
     table.write_parquet(path / "fields.parquet")
     table.write_csv(path / "fields.csv")

@@ -176,7 +176,7 @@ def parse(
 @app.command()
 def run(
     profile: str = typer.Option(
-        "standard", help="quick, standard or full. Full requires --allow-full."
+        "standard", help="quick, budget, standard or full. Full requires --allow-full."
     ),
     models: str = typer.Option(
         "", help="Comma-separated ids or groups; + and - modify profile defaults."
@@ -197,7 +197,8 @@ def run(
     exacto: bool = typer.Option(False, help="Use OpenRouter :exacto routing and record it."),
     concurrency: int = typer.Option(8, help="Maximum simultaneous cases per model."),
     max_cost: float = typer.Option(
-        75.0, help="USD spending cap; estimate must fit before calls begin."
+        75.0,
+        help="USD spending cap; budget profile additionally caps this at 5. Estimate must fit before calls begin.",
     ),
     seed: int = typer.Option(42, help="Case ordering, candidate and generation seed."),
     run_id: str = typer.Option("", help="Unique output folder name; empty uses a UTC timestamp."),
@@ -224,7 +225,9 @@ def run(
 
 @app.command()
 def estimate(
-    profile: str = typer.Option("standard", help="Profile to estimate: quick, standard or full."),
+    profile: str = typer.Option(
+        "standard", help="Profile to estimate: quick, budget, standard or full."
+    ),
     models: str = typer.Option("", help="Model ids or groups; + and - modify defaults."),
     conditions: str = typer.Option("", help="Condition ids; empty uses the profile."),
     suites: str = typer.Option("", help="Suite ids; empty uses profile defaults."),

@@ -1,0 +1,18 @@
+{
+  "run_id": "budget-20260925",
+  "profile": "budget",
+  "provisional": true,
+  "release_tag": "budget-pilot-20260925",
+  "case_count": 240,
+  "applicable_trials": 3980,
+  "scored_trial_fraction": 1.0,
+  "pilot_cost_usd": 0.470413882,
+  "smoke_cost_usd": 0.001504082,
+  "total_cost_usd": 0.471917964,
+  "spending_cap_usd": 5,
+  "analysis_plan_commit": "2a2ea2724424ada0ff6f97e54bdf5fd17fe0b40c",
+  "report_url": "https://agaasno.github.io/kronerbench/",
+  "case_audit": "deferred",
+  "report_sha256": "2304ce98bb5330abe4ceeb815c238681bef277e99bab67aea1550f65eadc6d7e",
+  "run_sha256": "f81ce407ba14a9144df7301547e44c010e1b5aefc7af654b230fbcb7d6af1abe"
+}
