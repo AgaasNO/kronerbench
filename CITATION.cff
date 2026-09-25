@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: Please cite KronerBench when using the benchmark or its case data.
+title: KronerBench
+version: 0.1.0
+authors:
+  - name: KronerBench contributors
+repository-code: https://github.com/AgaasNO/kronerbench
+license: MIT
