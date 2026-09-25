@@ -16,3 +16,9 @@
 - 2026-09-25: Case sampling is balanced round-robin across suites after seeded shuffling, and excludes derived by default.
 - 2026-09-25: Network failures with uncertain billing consume their conservative request ceiling in the cost guard instead of being counted as free.
 - 2026-09-25: Preserve sub-cent JSON values as Decimal but reject their commitment; offline float analysis uses `round(float(value) * 100)` as the common storage implementation.
+- 2026-09-25: The Haiku latest alias returns an empty endpoint list; resolve it to the live non-batch family equivalent `anthropic/claude-haiku-4.5` and retain both requested and resolved ids.
+- 2026-09-25: Live endpoint maxima project USD 102.6993792 for standard, exceeding the USD 75 cap and USD 50 available credit; stop paid benchmark work pending owner action.
+- 2026-09-25: Open the requested organization PR with offline evidence and explicit remaining work; do not publish fixture numbers as benchmark findings or create a release claiming a completed run.
+- 2026-09-25: Bundle the report as an IIFE and load embedded data through a classic script so it works under file:// without fetch, a server or external fonts.
+- 2026-09-25: Permit the esbuild install script explicitly in pnpm workspace configuration; Playwright uses its bundled Chromium.
+- 2026-09-25: Use transition bars for the first Retry lab implementation; the requested alluvial, Pareto frontier, verifier curves and full hypothesis decision rules remain tracked work.

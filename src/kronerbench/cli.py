@@ -10,6 +10,7 @@ from kronerbench.config import ROOT
 
 app = typer.Typer(
     no_args_is_help=True,
+    pretty_exceptions_show_locals=False,
     help="""KronerBench: do LLMs write wrong money amounts into tool calls?
 
 Compare strict formats with deterministic parsing. Live commands need OPENROUTER_API_KEY.
@@ -276,7 +277,7 @@ def resolve_run(name: str) -> Path:
 
 @app.command()
 def report(
-    run: str = "latest",
+    run: str = typer.Argument("latest", help="Stored run id or latest."),
     out: str = typer.Option("", help="Output directory; empty uses reports/<run-id>."),
     open: bool = typer.Option(False, "--open", help="Open the completed report in a browser."),
 ) -> None:

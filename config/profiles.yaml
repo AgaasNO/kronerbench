@@ -1,0 +1,3 @@
+quick: {sample: 40, conditions: [strict, lenient, select], repeats: 1}
+standard: {sample: 240, conditions: [strict, strict_constrained, lenient, verbatim, json_number, select], repeats: 1}
+full: {sample: 0, conditions: [strict, strict_constrained, lenient, verbatim, json_number, minor_units, select], repeats: 3}

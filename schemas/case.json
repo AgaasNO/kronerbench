@@ -1,0 +1,134 @@
+{
+  "$defs": {
+    "Field": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_minor": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Minor"
+        },
+        "expected_rate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Rate"
+        },
+        "expected_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Date"
+        },
+        "flag": {
+          "default": false,
+          "title": "Flag",
+          "type": "boolean"
+        },
+        "currency": {
+          "default": "NOK",
+          "title": "Currency",
+          "type": "string"
+        }
+      },
+      "title": "Field",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "suite": {
+      "title": "Suite",
+      "type": "string"
+    },
+    "lang": {
+      "default": "nb",
+      "title": "Lang",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "instruction": {
+      "default": "Record the amount to pay.",
+      "title": "Instruction",
+      "type": "string"
+    },
+    "fields": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Field"
+      },
+      "title": "Fields",
+      "type": "object"
+    },
+    "ambiguity": {
+      "default": "none",
+      "enum": [
+        "none",
+        "context",
+        "true"
+      ],
+      "title": "Ambiguity",
+      "type": "string"
+    },
+    "flag_ok": {
+      "default": false,
+      "title": "Flag Ok",
+      "type": "boolean"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    },
+    "origin": {
+      "default": "handwritten",
+      "enum": [
+        "handwritten",
+        "generated"
+      ],
+      "title": "Origin",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "suite",
+    "source",
+    "fields",
+    "tags",
+    "rationale"
+  ],
+  "title": "Case",
+  "type": "object"
+}

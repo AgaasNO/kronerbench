@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AgaasNO/kronerbench/schemas/trial.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "trial_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "string"
+    },
+    "repeat": {
+      "type": "integer"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "turn",
+          "name",
+          "raw_arguments",
+          "accepted",
+          "reason",
+          "value"
+        ],
+        "properties": {
+          "raw_arguments": {
+            "type": "string"
+          },
+          "accepted": {
+            "type": "boolean"
+          },
+          "turn": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "results": {
+      "type": "object"
+    },
+    "turns": {
+      "type": "integer"
+    },
+    "latency_ms": {
+      "type": "number"
+    },
+    "cost_usd": {
+      "type": "number"
+    },
+    "input_tokens": {
+      "type": "number"
+    },
+    "output_tokens": {
+      "type": "number"
+    },
+    "reasoning_tokens": {
+      "type": "number"
+    },
+    "generation_ids": {
+      "type": "array"
+    },
+    "providers": {
+      "type": "array"
+    },
+    "candidates": {
+      "type": "array"
+    },
+    "request_keys": {
+      "type": "array"
+    },
+    "api_error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "skip_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "trial_id",
+    "case_id",
+    "model",
+    "condition",
+    "repeat",
+    "seed",
+    "attempts",
+    "results",
+    "turns",
+    "latency_ms",
+    "cost_usd",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "generation_ids",
+    "providers",
+    "candidates",
+    "request_keys",
+    "api_error",
+    "skip_reason"
+  ]
+}

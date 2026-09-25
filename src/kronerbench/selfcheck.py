@@ -61,8 +61,8 @@ def check(skip_live: bool = False) -> list[dict[str, object]]:
         ("ruff", ["uv", "run", "ruff", "check", "."]),
         ("mypy", ["uv", "run", "mypy"]),
     ]:
-        r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
-        item(name, r.returncode == 0, (r.stdout + r.stderr)[-1800:])
+        process = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+        item(name, process.returncode == 0, (process.stdout + process.stderr)[-1800:])
     for name, path in [
         ("M4 fake pipeline", ".cache/fake-acceptance.json"),
         ("M5 report QA", "docs/img/qa.json"),
