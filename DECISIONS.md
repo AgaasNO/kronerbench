@@ -25,3 +25,4 @@
 - 2026-09-25: CI uses Node 22 for the current Vite/pnpm toolchain; Python remains 3.12-compatible.
 - 2026-09-25: Pages and release workflows require a published-run record and are not invoked for this fixture-only checkpoint.
 - 2026-09-25: A tool-managed local checkpoint ref contains the original `.env`; it is outside both publishing branches. Scan the complete histories of `main` and `feat/kronerbench` and push those refs explicitly without exporting local checkpoint refs.
+- 2026-09-25: Disable setup-uv caching in the live-contract job because it skips dependency installation when no repository secret exists; otherwise the action's post step fails while trying to save an absent cache directory.
